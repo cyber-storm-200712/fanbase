@@ -1,0 +1,75 @@
+{
+  "name": "@starcoin/stc-util",
+  "version": "0.3.0",
+  "description": "a collection of utility functions for Starcoin",
+  "main": "dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "ethereumjs-config-build",
+    "prepublishOnly": "npm run build",
+    "coverage": "npm run build && istanbul cover _mocha",
+    "coveralls": "npm run coverage && coveralls <coverage/lcov.info",
+    "docs:build": "typedoc --out docs --mode file --readme none --theme markdown --mdEngine github --excludeNotExported src",
+    "format": "ethereumjs-config-format",
+    "format:fix": "ethereumjs-config-format-fix",
+    "lint": "ethereumjs-config-lint",
+    "lint:fix": "ethereumjs-config-lint-fix",
+    "test": "npm run test:node",
+    "test:node": "npm run build && istanbul test mocha -- --reporter spec",
+    "test:mocha": "npm run build && mocha",
+    "tsc": "ethereumjs-config-tsc",
+    "tslint": "ethereumjs-config-tslint",
+    "tslint:fix": "ethereumjs-config-tslint-fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/starcoinorg/stc-util.git"
+  },
+  "keywords": [
+    "starcoin",
+    "utilties"
+  ],
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/starcoinorg/stc-util/issues"
+  },
+  "homepage": "https://github.com/starcoinorg/stc-util",
+  "dependencies": {
+    "bn.js": "^4.11.0",
+    "create-hash": "^1.1.2",
+    "ethjs-util": "0.1.6",
+    "js-sha3": "^0.8.0",
+    "keccak": "^1.0.2",
+    "noble-ed25519": "^1.0.4",
+    "rlp": "^2.0.0",
+    "safe-buffer": "^5.1.1",
+    "secp256k1": "^3.0.1"
+  },
+  "devDependencies": {
+    "@ethereumjs/config-prettier": "^1.1.0",
+    "@ethereumjs/config-tsc": "^1.1.0",
+    "@ethereumjs/config-tslint": "^1.1.0",
+    "@types/bn.js": "^4.11.3",
+    "@types/node": "^11.9.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babelify": "^8.0.0",
+    "browserify": "^14.0.0",
+    "contributor": "^0.1.25",
+    "coveralls": "^3.0.0",
+    "istanbul": "^0.4.1",
+    "karma": "^2.0.0",
+    "karma-env-preprocessor": "^0.1.1",
+    "karma-mocha": "^1.3.0",
+    "mocha": "^4.0.0",
+    "prettier": "^1.15.3",
+    "tslint": "^5.12.0",
+    "typedoc": "^0.14.0",
+    "typedoc-plugin-markdown": "^1.1.21",
+    "typescript": "^3.2.2",
+    "typestrict": "^1.0.2"
+  }
+}

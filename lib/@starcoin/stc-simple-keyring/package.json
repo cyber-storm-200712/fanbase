@@ -1,0 +1,37 @@
+{
+  "name": "@starcoin/stc-simple-keyring",
+  "version": "1.5.3",
+  "description": "A simple standard interface for a series of Starcoin private keys.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/starcoinorg/stc-simple-keyring.git"
+  },
+  "keywords": [
+    "starcoin",
+    "keyring"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/starcoinorg/stc-simple-keyring/issues"
+  },
+  "homepage": "https://github.com/starcoinorg/stc-simple-keyring#readme",
+  "dependencies": {
+    "@ethersproject/bytes": "^5.0.6",
+    "@starcoin/stc-wallet": "^1.2.2",
+    "@starcoin/stc-util": "^0.3.0",
+    "@starcoin/starcoin": "^1.6.2",
+    "eth-sig-util": "^2.5.0",
+    "ethereumjs-abi": "^0.6.5",
+    "events": "^1.1.1",
+    "xtend": "^4.0.1"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "ethereumjs-tx": "^2.1.0",
+    "mocha": "^5.2.0"
+  }
+}

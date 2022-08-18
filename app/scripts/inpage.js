@@ -33,8 +33,8 @@ cleanContextForImports();
 /* eslint-disable import/first */
 import log from 'loglevel';
 import LocalMessageDuplexStream from 'post-message-stream';
-import { initializeProvider } from '@starcoin/stc-inpage-provider';
-// import { initializeProvider } from '../../lib/@metamask/inpage-provider';
+// import { initializeProvider } from '@starcoin/stc-inpage-provider';
+import { initializeProvider } from '../../lib/@starcoin/stc-inpage-provider';
 
 restoreContextAfterImports();
 

@@ -1,0 +1,32 @@
+{
+  "0x4ffcc98f43ce74668264a0cf6eebe42b::FAI::FAI": {
+    "name": "FAI",
+    "logo": "fai.png",
+    "symbol": "FAI",
+    "decimals": 9
+  },
+  "0x8c109349c6bd91411d6bc962e080c4a3::STAR::STAR": {
+    "name": "STAR",
+    "logo": "star.svg",
+    "symbol": "STAR",
+    "decimals": 9
+  },
+  "0xbf60b00855c92fe725296a436101c8c6::WEN::WEN": {
+    "name": "WEN",
+    "logo": "wen.svg",
+    "symbol": "WEN",
+    "decimals": 9
+  },
+  "0xe52552637c5897a2d499fbf08216f73e::XUSDT::XUSDT": {
+    "name": "XUSDT",
+    "logo": "xusdt.svg",
+    "symbol": "XUSDT",
+    "decimals": 6
+  },
+  "0xe52552637c5897a2d499fbf08216f73e::XETH::XETH": {
+    "name": "XETH",
+    "logo": "xeth.svg",
+    "symbol": "XETH",
+    "decimals": 18
+  }
+}

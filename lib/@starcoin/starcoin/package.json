@@ -1,0 +1,107 @@
+{
+  "name": "@starcoin/starcoin",
+  "version": "1.9.0",
+  "description": "starcoin js sdk",
+  "author": "lerencao, wk3368, tarvos21",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/starcoinorg/starcoin.js"
+  },
+  "homepage": "https://github.com/starcoinorg/starcoin.js#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/starcoinorg/starcoin.js"
+  },
+  "keywords": [
+    "starcoin",
+    "defi",
+    "dapp",
+    "sdk",
+    "blockchain",
+    "client",
+    "javascript"
+  ],
+  "source": "index.ts",
+  "types": "dist/index.d.ts",
+  "main": "dist/starcoin.js",
+  "module": "dist/starcoin.module.js",
+  "umd:main": "./dist/starcoin.umd.js",
+  "files": [
+    "dist",
+    "LICENSE",
+    "readme.md"
+  ],
+  "dependencies": {
+    "@ethersproject/basex": "^5.0.4",
+    "@ethersproject/bignumber": "^5.0",
+    "@ethersproject/bytes": "^5.0.6",
+    "@ethersproject/hash": "^5.0.6",
+    "@ethersproject/keccak256": "^5.0.5",
+    "@ethersproject/logger": "^5.0.6",
+    "@ethersproject/properties": "^5.0.4",
+    "@ethersproject/sha2": "^5.0.4",
+    "@ethersproject/web": "^5.0.9",
+    "@starcoin/stc-ed25519": "^0.1.0",
+    "bech32": "^2.0.0",
+    "ethereumjs-util": "5.1.0",
+    "fs": "^0.0.1-security",
+    "is-alphabetical": "^1.0.4",
+    "is-alphanumerical": "^1.0.4",
+    "is-decimal": "^1.0.4",
+    "is-hexadecimal": "^1.0.4",
+    "is-whitespace-character": "^1.0.4",
+    "is-word-character": "^1.0.4",
+    "js-sha3": "^0.8.0",
+    "jssha": "^3.2.0",
+    "lodash": "^4.17.21",
+    "read-bigint": "^0.1.6",
+    "ws": "7.2.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.14",
+    "@typescript-eslint/eslint-plugin": "^4.1.1",
+    "@typescript-eslint/parser": "^4.1.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^7.9.0",
+    "eslint-config-airbnb-typescript": "^10.0.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-formatter-pretty": "^4.0.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jest": "^24.0.2",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-unicorn": "^22.0.0",
+    "jest": "^26.4.2",
+    "microbundle": "^0.12.0",
+    "prettier": "^2.0.4",
+    "ts-jest": "^26.3.0",
+    "typescript": "^4.0.3"
+  },
+  "scripts": {
+    "prepublishOnly": "yarn build",
+    "build": "microbundle -o dist/ --sourcemap false --compress false -f modern,es,cjs && microbundle -o dist/ -f umd",
+    "dev": "microbundle watch -o dist/ --sourcemap false --compress false -f modern,es,cjs",
+    "test": "yarn test:coverage",
+    "test:unit": "jest",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx ."
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": [
+      "node_modules",
+      "dist",
+      "coverage"
+    ],
+    "transform": {
+      "^.+\\.ts?$": "ts-jest"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "prettier": {
+    "singleQuote": true
+  }
+}
