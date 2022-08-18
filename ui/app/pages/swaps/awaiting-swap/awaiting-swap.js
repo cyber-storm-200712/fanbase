@@ -142,7 +142,7 @@ export default function AwaitingSwap({
       <a
         className="awaiting-swap__support-link"
         key="awaiting-swap-support-link"
-        href="https://westar.io/about"
+        href="https://www.fanbase.io/"
         target="_blank"
         rel="noopener noreferrer"
       >

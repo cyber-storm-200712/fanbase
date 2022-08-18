@@ -7,8 +7,8 @@ import { METAMASK_CONTROLLER_EVENTS } from '../metamask-controller';
 import createId from '../../../shared/modules/random-id';
 
 /**
- * Represents, and contains data about, an 'stc_getEncryptionPublicKey' type request. These are created when
- * an stc_getEncryptionPublicKey call is requested.
+ * Represents, and contains data about, an 'eth_getEncryptionPublicKey' type request. These are created when
+ * an eth_getEncryptionPublicKey call is requested.
  *
  * @typedef {Object} EncryptionPublicKey
  * @property {number} id An id to track and identify the message object
@@ -19,7 +19,7 @@ import createId from '../../../shared/modules/random-id';
  * @property {number} time The epoch time at which the this message was created
  * @property {string} status Indicates whether the request is 'unapproved', 'approved', 'received' or 'rejected'
  * @property {string} type The json-prc method for which a request has been made. A 'Message' will
- * always have a 'stc_getEncryptionPublicKey' type.
+ * always have a 'eth_getEncryptionPublicKey' type.
  *
  */
 
@@ -74,7 +74,7 @@ export default class EncryptionPublicKeyManager extends EventEmitter {
    * the new EncryptionPublicKey to this.messages, and to save the unapproved EncryptionPublicKeys from that list to
    * this.memStore.
    *
-   * @param {Object} address - The param for the stc_getEncryptionPublicKey call to be made after the message is approved.
+   * @param {Object} address - The param for the eth_getEncryptionPublicKey call to be made after the message is approved.
    * @param {Object} [req] - The original request object possibly containing the origin
    * @returns {Promise<Buffer>} The raw public key contents
    *
@@ -116,7 +116,7 @@ export default class EncryptionPublicKeyManager extends EventEmitter {
    * the new EncryptionPublicKey to this.messages, and to save the unapproved EncryptionPublicKeys from that list to
    * this.memStore.
    *
-   * @param {Object} address - The param for the stc_getEncryptionPublicKey call to be made after the message is approved.
+   * @param {Object} address - The param for eth_getEncryptionPublicKey call to be made after the message is approved.
    * @param {Object} [req] - The original request object possibly containing the origin
    * @returns {number} The id of the newly created EncryptionPublicKey.
    *
@@ -131,7 +131,7 @@ export default class EncryptionPublicKeyManager extends EventEmitter {
       msgParams: address,
       time,
       status: 'unapproved',
-      type: MESSAGE_TYPE.STC_GET_ENCRYPTION_PUBLIC_KEY,
+      type: MESSAGE_TYPE.ETH_GET_ENCRYPTION_PUBLIC_KEY,
     };
 
     if (req) {
@@ -173,7 +173,7 @@ export default class EncryptionPublicKeyManager extends EventEmitter {
    * Approves a EncryptionPublicKey. Sets the message status via a call to this.setMsgStatusApproved, and returns a promise
    * with any the message params modified for proper providing.
    *
-   * @param {Object} msgParams The msgParams to be used when stc_getEncryptionPublicKey is called, plus data added by StarMask.
+   * @param {Object} msgParams The msgParams to be used when eth_getEncryptionPublicKey is called, plus data added by StarMask.
    * @param {Object} msgParams.metamaskId Added to msgParams for tracking and identification within StarMask.
    * @returns {Promise<object>} Promises the msgParams object with metamaskId removed.
    *

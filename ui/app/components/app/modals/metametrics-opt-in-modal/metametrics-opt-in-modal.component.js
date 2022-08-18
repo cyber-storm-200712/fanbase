@@ -90,7 +90,7 @@ export default class MetaMetricsOptInModal extends Component {
               more information in relation to our privacy practices, please see
               our&nbsp;
               <a
-                href="https://westar.io/privacy"
+                href="https://www.fanbase.io/#/privacy"
                 target="_blank"
                 rel="noopener noreferrer"
               >

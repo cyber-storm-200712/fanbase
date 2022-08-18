@@ -20,7 +20,7 @@ export default class InfoTab extends PureComponent {
         {/* <div className="info-tab__link-item">
           <Button
             type="link"
-            href="https://westar.io/privacy"
+            href="https://www.fanbase.io/#/privacy"
             target="_blank"
             rel="noopener noreferrer"
             className="info-tab__link-text"
@@ -31,7 +31,7 @@ export default class InfoTab extends PureComponent {
         <div className="info-tab__link-item">
           <Button
             type="link"
-            href="https://westar.io/terms"
+            href="https://www.fanbase.io/#/terms"
             target="_blank"
             rel="noopener noreferrer"
             className="info-tab__link-text"
@@ -65,7 +65,7 @@ export default class InfoTab extends PureComponent {
         <div className="info-tab__link-item">
           <Button
             type="link"
-            href="https://westar.io/"
+            href="https://www.fanbase.io/"
             target="_blank"
             rel="noopener noreferrer"
             className="info-tab__link-text"
@@ -76,7 +76,7 @@ export default class InfoTab extends PureComponent {
         <div className="info-tab__link-item">
           <Button
             type="link"
-            href="https://westar.io/about/"
+            href="https://www.fanbase.io/"
             target="_blank"
             rel="noopener noreferrer"
             className="info-tab__link-text"
@@ -110,7 +110,7 @@ export default class InfoTab extends PureComponent {
           {this.renderInfoLinks()}
         </div>
         <div className="info-tab__logo-wrapper">
-          <img src="images/logo/starcoin-lgoo-text-blue.svg" className="info-tab__logo" alt="" />
+          <img src="images/logo/fanbaseBlueLogo.png" className="info-tab__logo" alt="" />
         </div>
       </div>
     );

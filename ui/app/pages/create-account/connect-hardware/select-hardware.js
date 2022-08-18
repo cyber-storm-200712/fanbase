@@ -201,7 +201,7 @@ export default class SelectHardware extends Component {
           {this.context.t('havingTroubleConnecting')}
           <a
             className="hw-connect__footer__link"
-            href="https://westar.io/about"
+            href="https://www.fanbase.io/"
             target="_blank"
             rel="noopener noreferrer"
           >

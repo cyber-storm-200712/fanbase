@@ -26,9 +26,9 @@ import BigNumber from 'bignumber.js';
 import { stripHexPrefix, BN } from '@starcoin/stc-util';
 
 // Big Number Constants
-const BIG_NUMBER_NANO_STC_MULTIPLIER = new BigNumber('1000000000');
-const BIG_NUMBER_MILLI_STC_MULTIPLIER = new BigNumber('1000');
-const BIG_NUMBER_STC_MULTIPLIER = new BigNumber('1');
+const BIG_NUMBER_NANO_ETH_MULTIPLIER = new BigNumber('1000000000');
+const BIG_NUMBER_MILLI_ETH_MULTIPLIER = new BigNumber('1000');
+const BIG_NUMBER_ETH_MULTIPLIER = new BigNumber('1');
 
 // Setter Maps
 const toBigNumber = {
@@ -37,14 +37,14 @@ const toBigNumber = {
   BN: (n) => new BigNumber(n.toString(16), 16),
 };
 const toNormalizedDenomination = {
-  NANOSTC: (bigNumber) => bigNumber.div(BIG_NUMBER_NANO_STC_MULTIPLIER),
-  MILLISTC: (bigNumber) => bigNumber.div(BIG_NUMBER_MILLI_STC_MULTIPLIER),
-  STC: (bigNumber) => bigNumber.div(BIG_NUMBER_STC_MULTIPLIER),
+  NANOSTC: (bigNumber) => bigNumber.div(BIG_NUMBER_NANO_ETH_MULTIPLIER),
+  MILLISTC: (bigNumber) => bigNumber.div(BIG_NUMBER_MILLI_ETH_MULTIPLIER),
+  STC: (bigNumber) => bigNumber.div(BIG_NUMBER_ETH_MULTIPLIER),
 };
 const toSpecifiedDenomination = {
-  NANOSTC: (bigNumber) => bigNumber.times(BIG_NUMBER_NANO_STC_MULTIPLIER).round(9),
-  MILLISTC: (bigNumber) => bigNumber.times(BIG_NUMBER_MILLI_STC_MULTIPLIER).round(9),
-  STC: (bigNumber) => bigNumber.times(BIG_NUMBER_STC_MULTIPLIER).round(9),
+  NANOSTC: (bigNumber) => bigNumber.times(BIG_NUMBER_NANO_ETH_MULTIPLIER).round(9),
+  MILLISTC: (bigNumber) => bigNumber.times(BIG_NUMBER_MILLI_ETH_MULTIPLIER).round(9),
+  STC: (bigNumber) => bigNumber.times(BIG_NUMBER_ETH_MULTIPLIER).round(9),
 };
 const baseChange = {
   hex: (n) => n.toString(16),

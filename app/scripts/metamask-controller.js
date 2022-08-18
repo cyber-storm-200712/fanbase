@@ -1623,10 +1623,10 @@ export default class MetamaskController extends EventEmitter {
     cb(null, this.getState());
   }
 
-  // stc_decrypt methods
+  // eth_decrypt methods
 
   /**
-   * Called when a dapp uses the stc_decrypt method.
+   * Called when a dapp uses the eth_decrypt method.
    *
    * @param {Object} msgParams - The params of the message to sign & return to the Dapp.
    * @param {Object} req - (optional) the original request, containing the origin
@@ -1695,14 +1695,14 @@ export default class MetamaskController extends EventEmitter {
       // tells the listener that the message has been decrypted and can be returned to the dapp
       this.decryptMessageManager.setMsgStatusDecrypted(msgId, rawMess);
     } catch (error) {
-      log.info('StarMaskController - stc_decrypt failed.', error);
+      log.info('StarMaskController - eth_decrypt failed.', error);
       this.decryptMessageManager.errorMessage(msgId, error);
     }
     return this.getState();
   }
 
   /**
-   * Used to cancel a stc_decrypt type message.
+   * Used to cancel a eth_decrypt type message.
    * @param {string} msgId - The ID of the message to cancel.
    * @param {Function} cb - The callback function called with a full state update.
    */
@@ -1715,10 +1715,10 @@ export default class MetamaskController extends EventEmitter {
     cb(null, this.getState());
   }
 
-  // stc_getEncryptionPublicKey methods
+  // eth_getEncryptionPublicKey methods
 
   /**
-   * Called when a dapp uses the stc_getEncryptionPublicKey method.
+   * Called when a dapp uses the eth_getEncryptionPublicKey method.
    *
    * @param {Object} msgParams - The params of the message to sign & return to the Dapp.
    * @param {Object} req - (optional) the original request, containing the origin
@@ -1732,7 +1732,7 @@ export default class MetamaskController extends EventEmitter {
       case 'Ledger Hardware': {
         return new Promise((_, reject) => {
           reject(
-            new Error('Ledger does not support stc_getEncryptionPublicKey.'),
+            new Error('Ledger does not support eth_getEncryptionPublicKey.'),
           );
         });
       }
@@ -1740,7 +1740,7 @@ export default class MetamaskController extends EventEmitter {
       case 'OneKey Hardware': {
         return new Promise((_, reject) => {
           reject(
-            new Error('OneKey does not support stc_getEncryptionPublicKey.'),
+            new Error('OneKey does not support eth_getEncryptionPublicKey.'),
           );
         });
       }
@@ -1784,7 +1784,7 @@ export default class MetamaskController extends EventEmitter {
       this.encryptionPublicKeyManager.setMsgStatusReceived(msgId, publicKey);
     } catch (error) {
       log.info(
-        'StarMaskController - stc_getEncryptionPublicKey failed.',
+        'StarMaskController - eth_getEncryptionPublicKey failed.',
         error,
       );
       this.encryptionPublicKeyManager.errorMessage(msgId, error);
@@ -1793,7 +1793,7 @@ export default class MetamaskController extends EventEmitter {
   }
 
   /**
-   * Used to cancel a stc_getEncryptionPublicKey type message.
+   * Used to cancel a eth_getEncryptionPublicKey type message.
    * @param {string} msgId - The ID of the message to cancel.
    * @param {Function} cb - The callback function called with a full state update.
    */

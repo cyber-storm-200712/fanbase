@@ -698,9 +698,9 @@
   "externalTemp": {
     "message": "外部临时"
   },
-  "stc_accounts": {
+  "eth_accounts": {
     "message": "查看您允许的账户的地址（必填）",
-    "description": "The description for the `stc_accounts` permission"
+    "description": "The description for the `eth_accounts` permission"
   },
   "starcoinPublicAddress": {
     "message": "Starcoin 公开地址"

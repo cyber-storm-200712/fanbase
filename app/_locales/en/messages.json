@@ -278,7 +278,7 @@
     "message": "StarMask is designed and built in California."
   },
   "builtInChina": {
-    "message": "StarMask is designed and built in China."
+    "message": "Fanbase is designed and built in fanbase.io"
   },
   "buy": {
     "message": "Buy"
@@ -736,9 +736,9 @@
   "externalTemp": {
     "message": "External Temp"
   },
-  "stc_accounts": {
+  "eth_accounts": {
     "message": "View the addresses of your permitted accounts (required)",
-    "description": "The description for the `stc_accounts` permission"
+    "description": "The description for the `eth_accounts` permission"
   },
   "starcoinPublicAddress": {
     "message": "Starcoin Public Address"
@@ -1120,7 +1120,7 @@
     "message": "StarMask Swaps is undergoing maintenance. Please check back later."
   },
   "metamaskVersion": {
-    "message": "StarMask Version"
+    "message": "Fanbase Version"
   },
   "metametricsCommitmentsAllowOptOut": {
     "message": "Always allow you to opt-out via Settings"

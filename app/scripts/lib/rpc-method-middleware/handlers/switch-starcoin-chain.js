@@ -2,7 +2,7 @@ import { ethErrors } from 'eth-rpc-errors';
 import { omit } from 'lodash';
 import { MESSAGE_TYPE } from '../../../../../shared/constants/app';
 import {
-  STC_SYMBOL,
+  ETH_SYMBOL,
   CHAIN_ID_TO_TYPE_MAP,
   NETWORK_TO_NAME_MAP,
   CHAIN_ID_TO_RPC_URL_MAP,
@@ -30,7 +30,7 @@ function findExistingNetwork(chainId, findCustomRpcBy) {
   if (chainId in CHAIN_ID_TO_TYPE_MAP) {
     return {
       chainId,
-      ticker: STC_SYMBOL,
+      ticker: ETH_SYMBOL,
       nickname: NETWORK_TO_NAME_MAP[chainId],
       rpcUrl: CHAIN_ID_TO_RPC_URL_MAP[chainId],
       type: CHAIN_ID_TO_TYPE_MAP[chainId],

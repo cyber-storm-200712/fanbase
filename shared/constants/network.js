@@ -37,7 +37,7 @@ export const BARNARD_DISPLAY_NAME = 'Barnard';
 export const PROXIMA_DISPLAY_NAME = 'Proxima';
 export const HALLEY_DISPLAY_NAME = 'Halley';
 
-export const STC_SYMBOL = 'STC';
+export const ETH_SYMBOL = 'ETH';
 
 export const INFURA_PROVIDER_TYPES = [MAINNET, BARNARD, PROXIMA, HALLEY];
 

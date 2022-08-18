@@ -11,8 +11,8 @@ import { addHexPrefix } from './util';
 const hexRe = /^[0-9A-Fa-f]+$/gu;
 
 /**
- * Represents, and contains data about, an 'stc_decrypt' type decryption request. These are created when a
- * decryption for an stc_decrypt call is requested.
+ * Represents, and contains data about, an 'eth_decrypt' type decryption request. These are created when a
+ * decryption for an eth_decrypt call is requested.
  *
  * @typedef {Object} DecryptMessage
  * @property {number} id An id to track and identify the message object
@@ -23,7 +23,7 @@ const hexRe = /^[0-9A-Fa-f]+$/gu;
  * @property {number} time The epoch time at which the this message was created
  * @property {string} status Indicates whether the decryption request is 'unapproved', 'approved', 'decrypted' or 'rejected'
  * @property {string} type The json-prc decryption method for which a decryption request has been made. A 'Message' will
- * always have a 'stc_decrypt' type.
+ * always have a 'eth_decrypt' type.
  *
  */
 
@@ -78,7 +78,7 @@ export default class DecryptMessageManager extends EventEmitter {
    * the new DecryptMessage to this.messages, and to save the unapproved DecryptMessages from that list to
    * this.memStore.
    *
-   * @param {Object} msgParams - The params for the stc_decrypt call to be made after the message is approved.
+   * @param {Object} msgParams - The params for the eth_decrypt call to be made after the message is approved.
    * @param {Object} [req] - The original request object possibly containing the origin
    * @returns {Promise<Buffer>} The raw decrypted message contents
    *
@@ -123,7 +123,7 @@ export default class DecryptMessageManager extends EventEmitter {
    * the new DecryptMessage to this.messages, and to save the unapproved DecryptMessages from that list to
    * this.memStore.
    *
-   * @param {Object} msgParams - The params for the stc_decrypt call to be made after the message is approved.
+   * @param {Object} msgParams - The params for the eth_decrypt call to be made after the message is approved.
    * @param {Object} [req] - The original request object possibly containing the origin
    * @returns {number} The id of the newly created DecryptMessage.
    *
@@ -147,7 +147,7 @@ export default class DecryptMessageManager extends EventEmitter {
       msgParams,
       time,
       status: 'unapproved',
-      type: MESSAGE_TYPE.STC_DECRYPT,
+      type: MESSAGE_TYPE.ETH_DECRYPT,
     };
     this.addMsg(msgData);
 
@@ -184,7 +184,7 @@ export default class DecryptMessageManager extends EventEmitter {
    * Approves a DecryptMessage. Sets the message status via a call to this.setMsgStatusApproved, and returns a promise
    * with the message params modified for proper decryption.
    *
-   * @param {Object} msgParams The msgParams to be used when stc_decrypt is called, plus data added by StarMask.
+   * @param {Object} msgParams The msgParams to be used when eth_decrypt is called, plus data added by StarMask.
    * @param {Object} msgParams.metamaskId Added to msgParams for tracking and identification within StarMask.
    * @returns {Promise<object>} Promises the msgParams object with metamaskId removed.
    *

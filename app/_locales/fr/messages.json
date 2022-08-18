@@ -721,9 +721,9 @@
   "estimatedTokenChanges": {
     "message": "Estimated Token Changes:"
   },
-  "stc_accounts": {
+  "eth_accounts": {
     "message": "Afficher les adresses de vos comptes autorisés (obligatoire)",
-    "description": "La description de l'autorisation `stc_accounts`"
+    "description": "La description de l'autorisation `eth_accounts`"
   },
   "starcoinPublicAddress": {
     "message": "Adresse publique Starcoin"

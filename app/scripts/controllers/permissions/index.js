@@ -105,7 +105,7 @@ export class PermissionsController {
         requestAccountsPermission: this._requestPermissions.bind(
           this,
           { origin },
-          { stc_accounts: {} },
+          { eth_accounts: {} },
         ),
       }),
     );
@@ -120,13 +120,13 @@ export class PermissionsController {
   }
 
   /**
-   * Request {@code stc_accounts} permissions
+   * Request {@code eth_accounts} permissions
    * @param {string} origin - The requesting origin
    * @returns {Promise<string>} The permissions request ID
    */
   async requestAccountsPermissionWithId(origin) {
     const id = nanoid();
-    this._requestPermissions({ origin }, { stc_accounts: {} }, id).then(
+    this._requestPermissions({ origin }, { eth_accounts: {} }, id).then(
       async () => {
         const permittedAccounts = await this.getAccounts(origin);
         this.notifyAccountsChanged(origin, permittedAccounts);
@@ -144,7 +144,7 @@ export class PermissionsController {
    */
   getAccounts(origin) {
     return new Promise((resolve, _) => {
-      const req = { method: 'stc_accounts' };
+      const req = { method: 'eth_accounts' };
       const res = {};
       this.permissions.providerMiddlewareFunction(
         { origin },
@@ -280,7 +280,7 @@ export class PermissionsController {
   }
 
   /**
-   * Expose an account to the given origin. Changes the stc_accounts
+   * Expose an account to the given origin. Changes the eth_accounts
    * permissions and emits accountsChanged.
    *
    * Throws error if the origin or account is invalid, or if the update fails.
@@ -298,14 +298,14 @@ export class PermissionsController {
 
     const oldPermittedAccounts = this._getPermittedAccounts(origin);
     if (!oldPermittedAccounts) {
-      throw new Error(`Origin does not have 'stc_accounts' permission`);
+      throw new Error(`Origin does not have 'eth_accounts' permission`);
     } else if (oldPermittedAccounts.includes(account)) {
       throw new Error('Account is already permitted for origin');
     }
 
     this.permissions.updateCaveatFor(
       origin,
-      'stc_accounts',
+      'eth_accounts',
       CAVEAT_NAMES.exposedAccounts,
       [...oldPermittedAccounts, account],
     );
@@ -316,9 +316,9 @@ export class PermissionsController {
   }
 
   /**
-   * Removes an exposed account from the given origin. Changes the stc_accounts
+   * Removes an exposed account from the given origin. Changes the eth_accounts
    * permission and emits accountsChanged.
-   * If origin only has a single permitted account, removes the stc_accounts
+   * If origin only has a single permitted account, removes the eth_accounts
    * permission from the origin.
    *
    * Throws error if the origin or account is invalid, or if the update fails.
@@ -336,7 +336,7 @@ export class PermissionsController {
 
     const oldPermittedAccounts = this._getPermittedAccounts(origin);
     if (!oldPermittedAccounts) {
-      throw new Error(`Origin does not have 'stc_accounts' permission`);
+      throw new Error(`Origin does not have 'eth_accounts' permission`);
     } else if (!oldPermittedAccounts.includes(account)) {
       throw new Error('Account is not permitted for origin');
     }
@@ -346,11 +346,11 @@ export class PermissionsController {
     );
 
     if (newPermittedAccounts.length === 0) {
-      this.removePermissionsFor({ [origin]: ['stc_accounts'] });
+      this.removePermissionsFor({ [origin]: ['eth_accounts'] });
     } else {
       this.permissions.updateCaveatFor(
         origin,
-        'stc_accounts',
+        'eth_accounts',
         CAVEAT_NAMES.exposedAccounts,
         newPermittedAccounts,
       );
@@ -362,7 +362,7 @@ export class PermissionsController {
   }
 
   /**
-   * Remove all permissions associated with a particular account. Any stc_accounts
+   * Remove all permissions associated with a particular account. Any eth_accounts
    * permissions left with no permitted accounts will be removed as well.
    *
    * Throws error if the account is invalid, or if the update fails.
@@ -388,7 +388,7 @@ export class PermissionsController {
    * Finalizes a permissions request. Throws if request validation fails.
    * Clones the passed-in parameters to prevent inadvertent modification.
    * Sets (adds or replaces) caveats for the following permissions:
-   * - stc_accounts: the permitted accounts caveat
+   * - eth_accounts: the permitted accounts caveat
    *
    * @param {Object} requestedPermissions - The requested permissions.
    * @param {string[]} requestedAccounts - The accounts to expose, if any.
@@ -398,7 +398,7 @@ export class PermissionsController {
     const finalizedPermissions = cloneDeep(requestedPermissions);
 
     const finalizedAccounts = cloneDeep(requestedAccounts);
-    const { stc_accounts: stcAccounts } = finalizedPermissions;
+    const { eth_accounts: stcAccounts } = finalizedPermissions;
 
     if (stcAccounts) {
       this.validatePermittedAccounts(finalizedAccounts);
@@ -494,7 +494,7 @@ export class PermissionsController {
       this.permissions.removePermissionsFor(
         origin,
         perms.map((methodName) => {
-          if (methodName === 'stc_accounts') {
+          if (methodName === 'eth_accounts') {
             this.notifyAccountsChanged(origin, []);
           }
 
@@ -615,7 +615,7 @@ export class PermissionsController {
    */
   _getPermittedAccounts(origin) {
     const permittedAccounts = this.permissions
-      .getPermission(origin, 'stc_accounts')
+      .getPermission(origin, 'eth_accounts')
       ?.caveats?.find((caveat) => caveat.name === CAVEAT_NAMES.exposedAccounts)
       ?.value;
 
@@ -640,7 +640,7 @@ export class PermissionsController {
     const connectedDomains = Object.entries(domains)
       .filter(([_, { permissions }]) => {
         const stcAccounts = permissions.find(
-          (permission) => permission.parentCapability === 'stc_accounts',
+          (permission) => permission.parentCapability === 'eth_accounts',
         );
         const exposedAccounts = stcAccounts?.caveats.find(
           (caveat) => caveat.name === 'exposedAccounts',

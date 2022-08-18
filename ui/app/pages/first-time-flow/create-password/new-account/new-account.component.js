@@ -217,7 +217,7 @@ export default class NewAccount extends PureComponent {
                 <a
                   onClick={(e) => e.stopPropagation()}
                   key="first-time-flow__link-text"
-                  href="https://westar.io/terms"
+                  href="https://www.fanbase.io/#/terms"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
