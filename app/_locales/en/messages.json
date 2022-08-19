@@ -558,7 +558,7 @@
     "message": "Decrypt request"
   },
   "defaultNetwork": {
-    "message": "The default network for STC transactions is Main."
+    "message": "The default network is Ethereum mainnet."
   },
   "delete": {
     "message": "Delete"
