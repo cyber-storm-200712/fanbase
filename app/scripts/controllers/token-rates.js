@@ -55,7 +55,7 @@ export default class TokenRatesController {
         });
       } catch (error) {
         log.warn(
-          `StarMask - TokenRatesController exchange rate fetch failed.`,
+          `Fanbase - TokenRatesController exchange rate fetch failed.`,
           error,
         );
       }

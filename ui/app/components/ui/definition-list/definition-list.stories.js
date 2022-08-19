@@ -24,7 +24,7 @@ const basic = {
 const advanced = {
   'Network Name': 'Ethereum Mainnet',
   'Chain ID': '1',
-  Ticker: 'STC',
+  Ticker: 'ETH',
 };
 
 const tooltips = {

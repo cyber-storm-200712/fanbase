@@ -201,8 +201,8 @@ export function shouldShowCustomPriceTooLowWarning(state) {
     {
       value: customGasPrice,
       fromNumericBase: 'hex',
-      fromDenomination: 'NANOSTC',
-      toDenomination: 'MILLISTC',
+      fromDenomination: 'WEI',
+      toDenomination: 'GWEI',
     },
     { value: average, fromNumericBase: 'dec' },
   );

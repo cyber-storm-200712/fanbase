@@ -21,7 +21,7 @@ const BIP44_PATH = `m/44'/101010'/0'/0'`;
 const HD_PATHS = [
   { name: 'Ledger Live', value: LEDGER_LIVE_PATH },
   { name: 'Legacy (MEW / MyCrypto)', value: MEW_PATH },
-  { name: `BIP44 Standard (e.g. StarMask, OneKey)`, value: BIP44_PATH },
+  { name: `BIP44 Standard (e.g. Fanbase, OneKey)`, value: BIP44_PATH },
 ];
 
 class ConnectHardwareForm extends Component {

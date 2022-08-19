@@ -241,7 +241,7 @@ export default class SendTransactionScreen extends Component {
       }
     }
 
-    // If selecting STC after selecting a token, clear token related messages.
+    // If selecting ETH after selecting a token, clear token related messages.
     if (prevSendToken && !sendToken) {
       let error = toError;
       let warning = toWarning;

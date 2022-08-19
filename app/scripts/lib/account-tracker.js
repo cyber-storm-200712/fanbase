@@ -297,7 +297,7 @@ export default class AccountTracker {
             );
             const balanceHex = new BigNumber(balanceDecimal, 10).toString(16);
             const balance = addHexPrefix(balanceHex);
-            if (token === '0x00000000000000000000000000000001::STC::STC') {
+            if (token === '0x00000000000000000000000000000001::ETH::ETH') {
               const result = { address, balance };
               accounts[address] = result;
             } else {
@@ -389,7 +389,7 @@ export default class AccountTracker {
     ethContract.balances(addresses, ethBalance, (error, result) => {
       if (error) {
         log.warn(
-          `StarMask - Account Tracker single call balance fetch failed`,
+          `Fanbase - Account Tracker single call balance fetch failed`,
           error,
         );
         Promise.all(addresses.map(this._updateAccount.bind(this)));

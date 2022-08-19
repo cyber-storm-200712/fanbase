@@ -49,7 +49,7 @@ if (process.env.IN_TEST === 'true') {
 }
 
 const defaultProviderConfig = {
-  ticker: 'STC',
+  ticker: 'ETh',
   ...defaultProviderConfigOpts,
 };
 
@@ -177,7 +177,7 @@ export default class NetworkController extends EventEmitter {
     return NETWORK_TYPE_TO_ID_MAP[type]?.chainId || configChainId;
   }
 
-  setRpcTarget(rpcUrl, chainId, ticker = 'STC', nickname = '', rpcPrefs) {
+  setRpcTarget(rpcUrl, chainId, ticker = 'ETH', nickname = '', rpcPrefs) {
     assert.ok(
       isPrefixedFormattedHexString(chainId),
       `Invalid chain ID "${ chainId }": invalid hex string.`,
@@ -196,7 +196,7 @@ export default class NetworkController extends EventEmitter {
     });
   }
 
-  async setProviderType(type, rpcUrl = '', ticker = 'STC', nickname = '') {
+  async setProviderType(type, rpcUrl = '', ticker = 'ETh', nickname = '') {
     assert.notStrictEqual(
       type,
       NETWORK_TYPE_RPC,

@@ -125,7 +125,7 @@ async function initialize() {
   const initState = await loadStateFromPersistence();
   const initLangCode = await getFirstPreferredLangCode();
   await setupController(initState, initLangCode);
-  log.debug('StarMask initialization complete.');
+  log.debug('Fanbase initialization complete.');
 }
 
 //
@@ -154,7 +154,7 @@ async function loadStateFromPersistence() {
   if (versionedData && !versionedData.data) {
     // unable to recover, clear state
     versionedData = migrator.generateInitialState(firstTimeState);
-    sentry.captureMessage('StarMask - Empty vault found - unable to recover');
+    sentry.captureMessage('Fanbase - Empty vault found - unable to recover');
   }
 
   // report migration errors to sentry
@@ -170,7 +170,7 @@ async function loadStateFromPersistence() {
   // migrate data
   versionedData = await migrator.migrateData(versionedData);
   if (!versionedData) {
-    throw new Error('StarMask - migrator returned undefined');
+    throw new Error('Fanbase - migrator returned undefined');
   }
 
   // write to disk
@@ -179,7 +179,7 @@ async function loadStateFromPersistence() {
   } else {
     // throw in setTimeout so as to not block boot
     setTimeout(() => {
-      throw new Error('StarMask - Localstore not supported');
+      throw new Error('Fanbase - Localstore not supported');
     });
   }
 
@@ -239,7 +239,7 @@ function setupController(initState, initLangCode) {
     storeTransformStream(versionifyData),
     createStreamSink(persistData),
     (error) => {
-      log.error('StarMask - Persistence pipeline failed', error);
+      log.error('Fanbase - Persistence pipeline failed', error);
     },
   );
 
@@ -257,10 +257,10 @@ function setupController(initState, initLangCode) {
 
   async function persistData(state) {
     if (!state) {
-      throw new Error('StarMask - updated state is missing');
+      throw new Error('Fanbase - updated state is missing');
     }
     if (!state.data) {
-      throw new Error('StarMask - updated state does not have data');
+      throw new Error('Fanbase - updated state does not have data');
     }
     if (localStore.isSupported) {
       try {

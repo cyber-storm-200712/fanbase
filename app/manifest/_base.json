@@ -1,5 +1,5 @@
 {
-  "author": "westar.io",
+  "author": "fanbase.io",
   "background": {
     "scripts": [
       "globalthis.js",
@@ -13,17 +13,17 @@
   },
   "browser_action": {
     "default_icon": {
-      "16": "images/icon-16.png",
-      "19": "images/icon-19.png",
-      "32": "images/icon-32.png",
-      "38": "images/icon-38.png",
-      "48": "images/icon-48.png",
-      "64": "images/icon-64.png",
-      "128": "images/icon-128.png",
-      "162": "images/icon-162.png",
-      "512": "images/icon-512.png"
+      "16": "images/logo/logo.png",
+      "19": "images/logo/logo.png",
+      "32": "images/logo/logo.png",
+      "38": "images/logo/logo.png",
+      "48": "images/logo/logo.png",
+      "64": "images/logo/logo.png",
+      "128": "images/logo/logo.png",
+      "162": "images/logo/logo.png",
+      "512": "images/logo/logo.png"
     },
-    "default_title": "StarMask",
+    "default_title": "Fanbase.io",
     "default_popup": "popup.html"
   },
   "commands": {
@@ -65,15 +65,15 @@
   "default_locale": "en",
   "description": "__MSG_appDescription__",
   "icons": {
-    "16": "images/icon-16.png",
-    "19": "images/icon-19.png",
-    "32": "images/icon-32.png",
-    "38": "images/icon-38.png",
-    "48": "images/icon-48.png",
-    "64": "images/icon-64.png",
-    "128": "images/icon-128.png",
-    "162": "images/icon-162.png",
-    "512": "images/icon-512.png"
+    "16": "images/logo/logo.png",
+      "19": "images/logo/logo.png",
+      "32": "images/logo/logo.png",
+      "38": "images/logo/logo.png",
+      "48": "images/logo/logo.png",
+      "64": "images/logo/logo.png",
+      "128": "images/logo/logo.png",
+      "162": "images/logo/logo.png",
+      "512": "images/logo/logo.png"
   },
   "manifest_version": 2,
   "name": "__MSG_appName__",

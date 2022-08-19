@@ -27,9 +27,9 @@ export const COLORS = {
   ALERT2: 'alert-2',
   ALERT3: 'alert-3',
   MAINNET: 'main',
-  BARNARD: 'barnard',
-  PROXIMA: 'proxima',
-  HALLEY: 'halley',
+  ROPSTEN: 'ropsten',
+  RINKEBY: 'rinkeby',
+  GOERLI: 'goerli',
   TRANSPARENT: 'transparent',
 };
 

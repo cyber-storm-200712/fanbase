@@ -23,7 +23,7 @@ export const standard = () => (
   />
 );
 
-export const image = () => <Identicon image="./images/stc_logo.svg" />;
+export const image = () => <Identicon image="./images/eth2.png" />;
 
 export const blockie = () => (
   <Identicon

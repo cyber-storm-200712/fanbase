@@ -5,7 +5,7 @@ import rootReducer from '../ducks';
 
 export default function configureStore(initialState) {
   const composeEnhancers = composeWithDevTools({
-    name: 'StarMask',
+    name: 'Fanbase',
     hostname: 'localhost',
     port: 8100,
     realtime: Boolean(process.env.STARMASK_DEBUG),

@@ -39,7 +39,7 @@ function injectScript(content) {
     container.insertBefore(scriptTag, container.children[0]);
     container.removeChild(scriptTag);
   } catch (error) {
-    console.error('StarMask: Provider injection failed.', error);
+    console.error('Fanbase: Provider injection failed.', error);
   }
 }
 
@@ -65,10 +65,10 @@ async function setupStreams() {
   extensionMux.setMaxListeners(25);
 
   pump(pageMux, pageStream, pageMux, (err) =>
-    logStreamDisconnectWarning('StarMask Inpage Multiplex', err),
+    logStreamDisconnectWarning('Fanbase Inpage Multiplex', err),
   );
   pump(extensionMux, extensionStream, extensionMux, (err) => {
-    logStreamDisconnectWarning('StarMask Background Multiplex', err);
+    logStreamDisconnectWarning('Fanbase Background Multiplex', err);
     notifyInpageOfStreamFailure();
   });
 
@@ -85,7 +85,7 @@ function forwardTrafficBetweenMuxes(channelName, muxA, muxB) {
   const channelB = muxB.createStream(channelName);
   pump(channelA, channelB, channelA, (error) =>
     console.debug(
-      `StarMask: Muxed traffic for channel "${channelName}" failed.`,
+      `Fanbase: Muxed traffic for channel "${channelName}" failed.`,
       error,
     ),
   );
@@ -99,7 +99,7 @@ function forwardTrafficBetweenMuxes(channelName, muxA, muxB) {
  */
 function logStreamDisconnectWarning(remoteLabel, error) {
   console.debug(
-    `StarMask: Content script lost connection to "${remoteLabel}".`,
+    `Fanbase: Content script lost connection to "${remoteLabel}".`,
     error,
   );
 }
@@ -223,7 +223,7 @@ function blockedDomainCheck() {
  * Redirects the current page to a phishing information page
  */
 function redirectToPhishingWarning() {
-  console.debug('StarMask: Routing to Phishing Warning component.');
+  console.debug('Fanbase: Routing to Phishing Warning component.');
   const extensionURL = extension.runtime.getURL('phishing.html');
   window.location.href = `${extensionURL}#${querystring.stringify({
     hostname: window.location.hostname,

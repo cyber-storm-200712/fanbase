@@ -363,7 +363,7 @@ export async function fetchSwapsQuoteRefreshTime(chainId) {
   }
 
   throw new Error(
-    `StarMask - refreshTime provided invalid response: ${response}`,
+    `Fanbase - refreshTime provided invalid response: ${response}`,
   );
 }
 
@@ -630,8 +630,8 @@ export function getSwapsTokensReceivedFromTxMeta(
       {
         aBase: 16,
         bBase: 16,
-        fromDenomination: 'NANOSTC',
-        toDenomination: 'STC',
+        fromDenomination: 'WEI',
+        toDenomination: 'ETH',
         toNumericBase: 'dec',
         numberOfDecimals: 6,
       },

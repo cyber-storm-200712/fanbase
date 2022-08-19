@@ -113,7 +113,7 @@ export default class SignatureRequestOriginal extends Component {
     const balanceInStc = conversionUtil(balance, {
       fromNumericBase: 'hex',
       toNumericBase: 'dec',
-      fromDenomination: 'NANOSTC',
+      fromDenomination: 'WEI',
       numberOfDecimals: 6,
       conversionRate,
     });
@@ -124,7 +124,7 @@ export default class SignatureRequestOriginal extends Component {
           {`${this.context.t('balance')}:`}
         </div>
         <div className="request-signature__balance-value">
-          {`${balanceInStc} STC`}
+          {`${balanceInStc} ETH`}
         </div>
       </div>
     );

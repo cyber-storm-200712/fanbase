@@ -11,7 +11,7 @@ import {
   roundExponential,
 } from '../../helpers/utils/confirm-tx.util';
 import { getWeiHexFromDecimalValue } from '../../helpers/utils/conversions.util';
-import { STC, PRIMARY } from '../../helpers/constants/common';
+import { ETH, PRIMARY } from '../../helpers/constants/common';
 
 export default function ConfirmTokenTransactionBase({
   toAddress,
@@ -37,8 +37,8 @@ export default function ConfirmTokenTransactionBase({
 
     return getWeiHexFromDecimalValue({
       value: decimalEthValue,
-      fromCurrency: STC,
-      fromDenomination: STC,
+      fromCurrency: ETH,
+      fromDenomination: ETh,
     });
   }, [tokenAmount, contractExchangeRate]);
 
@@ -86,7 +86,7 @@ export default function ConfirmTokenTransactionBase({
       primaryTotalTextOverride={
         <div>
           <span>{`${tokensText} + `}</span>
-          <img src="/images/stc_logo.svg" height="18" alt="" />
+          <img src="/images/eth2.png" height="18" alt="" />
           <span>{ethTransactionTotal}</span>
         </div>
       }

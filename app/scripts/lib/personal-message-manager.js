@@ -89,7 +89,7 @@ export default class PersonalMessageManager extends EventEmitter {
     return new Promise((resolve, reject) => {
       if (!msgParams.from) {
         reject(
-          new Error('StarMask Message Signature: from field is required.'),
+          new Error('Fanbase Message Signature: from field is required.'),
         );
         return;
       }
@@ -102,14 +102,14 @@ export default class PersonalMessageManager extends EventEmitter {
           case 'rejected':
             reject(
               ethErrors.provider.userRejectedRequest(
-                'StarMask Message Signature: User denied message signature.',
+                'Fanbase Message Signature: User denied message signature.',
               ),
             );
             return;
           default:
             reject(
               new Error(
-                `StarMask Message Signature: Unknown problem: ${JSON.stringify(
+                `Fanbase Message Signature: Unknown problem: ${JSON.stringify(
                   msgParams,
                 )}`,
               ),

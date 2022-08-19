@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { STC } from '../../../helpers/constants/common';
+import { ETH } from '../../../helpers/constants/common';
 import { getIsMainnet, getPreferences } from '../../../selectors';
 import CurrencyInput from './currency-input.component';
 
@@ -26,7 +26,7 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
     ...stateProps,
     ...dispatchProps,
     ...ownProps,
-    nativeSuffix: nativeCurrency || STC,
+    nativeSuffix: nativeCurrency || ETH,
     fiatSuffix: currentCurrency.toUpperCase(),
   };
 };

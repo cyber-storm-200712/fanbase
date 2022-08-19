@@ -27,59 +27,45 @@ export default class MetaMetricsOptInModal extends Component {
               <img src="images/metrics-chart.svg" alt="" />
             </div>
             <div className="metametrics-opt-in__title">
-              Help Us Improve StarMask
+              Fanbase needs your help.
             </div>
             <div className="metametrics-opt-in__body">
               <div className="metametrics-opt-in__description">
-                StarMask would like to gather usage data to better understand
-                how our users interact with the extension. This data will be
-                used to continually improve the usability and user experience of
-                our product and the Ethereum ecosystem.
+              FFanbase collects user data according to law and to improve the useability of the application. 
               </div>
               <div className="metametrics-opt-in__description">
-                StarMask will..
+              You can...
               </div>
 
               <div className="metametrics-opt-in__committments">
                 <div className="metametrics-opt-in__row">
                   <i className="fa fa-check" />
                   <div className="metametrics-opt-in__row-description">
-                    Always allow you to opt-out via Settings
+                  Opt-out via settings.
                   </div>
                 </div>
                 <div className="metametrics-opt-in__row">
                   <i className="fa fa-check" />
                   <div className="metametrics-opt-in__row-description">
-                    Send anonymized click & pageview events
+                  View pages anonymously.
                   </div>
                 </div>
                 <div className="metametrics-opt-in__row">
                   <i className="fa fa-check" />
                   <div className="metametrics-opt-in__row-description">
-                    Maintain a public aggregate dashboard to educate the
-                    community
-                  </div>
-                </div>
-                <div className="metametrics-opt-in__row metametrics-opt-in__break-row">
-                  <i className="fa fa-times" />
-                  <div className="metametrics-opt-in__row-description">
-                    <span className="metametrics-opt-in__bold">Never</span>{' '}
-                    collect keys, addresses, transactions, balances, hashes, or
-                    any personal information
+                  Review our decentralized principles.
                   </div>
                 </div>
                 <div className="metametrics-opt-in__row">
-                  <i className="fa fa-times" />
+                  <i className="fa fa-check" />
                   <div className="metametrics-opt-in__row-description">
-                    <span className="metametrics-opt-in__bold">Never</span>{' '}
-                    collect your full IP address
+                  Make suggestions on our BonJourno.com board.
                   </div>
                 </div>
                 <div className="metametrics-opt-in__row">
-                  <i className="fa fa-times" />
+                  <i className="fa fa-check" />
                   <div className="metametrics-opt-in__row-description">
-                    <span className="metametrics-opt-in__bold">Never</span> sell
-                    data for profit. Ever!
+                  Engage with our chats regularly on BonJourno.com.
                   </div>
                 </div>
               </div>

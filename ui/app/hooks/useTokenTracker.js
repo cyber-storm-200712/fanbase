@@ -18,7 +18,7 @@ export function useTokenTracker(
         return;
       }
       const currentToken = tokens.filter((token) => token.code === key)[0];
-      if (key === '0x00000000000000000000000000000001::STC::STC') {
+      if (key === '0x00000000000000000000000000000001::ETH::ETH') {
         return;
       }
       if (hideZeroBalanceTokens && Number(currentAssets[key]) === 0) {

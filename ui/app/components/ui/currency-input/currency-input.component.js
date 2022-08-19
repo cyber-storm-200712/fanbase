@@ -6,12 +6,12 @@ import {
   getValueFromWeiHex,
   getWeiHexFromDecimalValue,
 } from '../../../helpers/utils/conversions.util';
-import { STC } from '../../../helpers/constants/common';
+import { ETH } from '../../../helpers/constants/common';
 
 /**
  * Component that allows user to enter currency values as a number, and props receive a converted
- * hex value in NANOSTC. props.value, used as a default or forced value, should be a hex value, which
- * gets converted into a decimal value depending on the currency (STC or Fiat).
+ * hex value in WEI. props.value, used as a default or forced value, should be a hex value, which
+ * gets converted into a decimal value depending on the currency (ETH or Fiat).
  */
 export default class CurrencyInput extends PureComponent {
   static contextTypes = {
@@ -68,7 +68,7 @@ export default class CurrencyInput extends PureComponent {
       })
       : getValueFromWeiHex({
         value: hexValue,
-        toCurrency: STC,
+        toCurrency: ETH,
         numberOfDecimals: 6,
       });
 
@@ -109,8 +109,8 @@ export default class CurrencyInput extends PureComponent {
       })
       : getWeiHexFromDecimalValue({
         value: decimalValue,
-        fromCurrency: STC,
-        fromDenomination: STC,
+        fromCurrency: ETH,
+        fromDenomination: ETH,
         conversionRate,
       });
 
@@ -132,8 +132,8 @@ export default class CurrencyInput extends PureComponent {
     }
 
     if (this.shouldUseFiat()) {
-      // Display STC
-      currency = nativeCurrency || STC;
+      // Display ETH
+      currency = nativeCurrency || ETH;
       numberOfDecimals = 6;
     } else {
       // Display Fiat

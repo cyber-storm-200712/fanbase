@@ -137,7 +137,7 @@ export default class ConfirmDecryptMessage extends Component {
     const balanceInStc = conversionUtil(balance, {
       fromNumericBase: 'hex',
       toNumericBase: 'dec',
-      fromDenomination: 'NANOSTC',
+      fromDenomination: 'WEI',
       numberOfDecimals: 6,
       conversionRate,
     });
@@ -148,7 +148,7 @@ export default class ConfirmDecryptMessage extends Component {
           {`${t('balance')}:`}
         </div>
         <div className="request-decrypt-message__balance-value">
-          {`${balanceInStc} STC`}
+          {`${balanceInStc} ETH`}
         </div>
       </div>
     );

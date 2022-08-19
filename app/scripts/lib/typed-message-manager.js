@@ -88,17 +88,17 @@ export default class TypedMessageManager extends EventEmitter {
           case 'rejected':
             return reject(
               ethErrors.provider.userRejectedRequest(
-                'StarMask Message Signature: User denied message signature.',
+                'Fanbase Message Signature: User denied message signature.',
               ),
             );
           case 'errored':
             return reject(
-              new Error(`StarMask Message Signature: ${data.error}`),
+              new Error(`Fanbase Message Signature: ${data.error}`),
             );
           default:
             return reject(
               new Error(
-                `StarMask Message Signature: Unknown problem: ${JSON.stringify(
+                `Fanbase Message Signature: Unknown problem: ${JSON.stringify(
                   msgParams,
                 )}`,
               ),
@@ -200,7 +200,7 @@ export default class TypedMessageManager extends EventEmitter {
           const activeChainId = parseInt(this._getCurrentChainId(), 16);
           assert.ok(
             !Number.isNaN(activeChainId),
-            `Cannot sign messages for chainId "${chainId}", because StarMask is switching networks.`,
+            `Cannot sign messages for chainId "${chainId}", because Fanbase is switching networks.`,
           );
           assert.equal(
             chainId,

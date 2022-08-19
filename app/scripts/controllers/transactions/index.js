@@ -174,7 +174,7 @@ export default class TransactionController extends EventEmitter {
    */
   async newUnapprovedTransaction(txParams, opts = {}) {
     log.debug(
-      'StarMaskController newUnapprovedTransaction', { txParams, origin }
+      'FanbaseController newUnapprovedTransaction', { txParams, origin }
     );
 
     const initialTxMeta = await this.addUnapprovedTransaction(
@@ -194,7 +194,7 @@ export default class TransactionController extends EventEmitter {
               return reject(
                 cleanErrorStack(
                   ethErrors.provider.userRejectedRequest(
-                    'StarMask Tx Signature: User denied transaction signature.',
+                    'Fanbase Tx Signature: User denied transaction signature.',
                   ),
                 ),
               );
@@ -208,7 +208,7 @@ export default class TransactionController extends EventEmitter {
               return reject(
                 cleanErrorStack(
                   ethErrors.rpc.internal(
-                    `StarMask Tx Signature: Unknown problem: ${ JSON.stringify(
+                    `Fanbase Tx Signature: Unknown problem: ${ JSON.stringify(
                       finishedTxMeta.txParams,
                     ) }`,
                   ),
@@ -228,7 +228,7 @@ export default class TransactionController extends EventEmitter {
    */
   async addUnapprovedTransaction(txParams, origin) {
     log.debug(
-      'StarMaskController addUnapprovedTransaction', { txParams, origin }
+      'FanbaseController addUnapprovedTransaction', { txParams, origin }
     );
     // validate
     const normalizedTxParams = txUtils.normalizeTxParams(txParams);
@@ -711,7 +711,7 @@ export default class TransactionController extends EventEmitter {
       ) {
         const functionId = '0x00000000000000000000000000000001::TransferScripts::peer_to_peer_v2';
 
-        const tyArgs = [{ Struct: { address: '0x1', module: 'STC', name: 'STC', type_params: [] } }];
+        const tyArgs = [{ Struct: { address: '0x1', module: 'ETH', name: 'ETH', type_params: [] } }];
 
         const receiver = txParams.toReceiptIdentifier ? txParams.toReceiptIdentifier : txParams.to;
         let receiverAddressHex;
@@ -746,7 +746,7 @@ export default class TransactionController extends EventEmitter {
       }
       if (!payload) {
         log.error('payload is undefined');
-        throw new Error('StarMask - signTransaction: payload is undefined');
+        throw new Error('Fanbase - signTransaction: payload is undefined');
       }
       rawUserTransaction = utils.tx.generateRawUserTransaction(
         fromAddress,

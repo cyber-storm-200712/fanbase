@@ -122,7 +122,7 @@ class NetworkDropdown extends Component {
     const reversedRpcListDetail = rpcListDetail.slice().reverse();
 
     return reversedRpcListDetail.map((entry) => {
-      const { rpcUrl, chainId, ticker = 'STC', nickname = '' } = entry;
+      const { rpcUrl, chainId, ticker = 'ETH', nickname = '' } = entry;
       const isCurrentRpcTarget =
         provider.type === NETWORK_TYPE_RPC && rpcUrl === provider.rpcUrl;
 
@@ -187,12 +187,12 @@ class NetworkDropdown extends Component {
 
     if (providerName === 'main') {
       name = this.context.t('main');
-    } else if (providerName === 'barnard') {
-      name = this.context.t('barnard');
-    } else if (providerName === 'proxima') {
-      name = this.context.t('proxima');
-    } else if (providerName === 'halley') {
-      name = this.context.t('halley');
+    } else if (providerName === 'ropsten') {
+      name = this.context.t('ropsten');
+    } else if (providerName === 'rinkeby') {
+      name = this.context.t('rinkeby');
+    } else if (providerName === 'goerli') {
+      name = this.context.t('goerli');
     } else {
       name = provider.nickname || this.context.t('unknownNetwork');
     }
@@ -280,9 +280,9 @@ class NetworkDropdown extends Component {
           </div>
         </div>
         {this.renderNetworkEntry('main')}
-        {this.renderNetworkEntry('barnard')}
-        {this.renderNetworkEntry('proxima')}
-        {this.renderNetworkEntry('halley')}
+        {this.renderNetworkEntry('ropsten')}
+        {this.renderNetworkEntry('rinkeby')}
+        {this.renderNetworkEntry('goerli')}
 
         {this.renderCustomRpcList(rpcListDetail, this.props.provider)}
         <DropdownMenuItem

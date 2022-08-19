@@ -54,7 +54,7 @@ export default function ConfirmApprove() {
   const { tokensWithBalances } = useTokenTracker([currentToken]);
   const tokenTrackerBalance = tokensWithBalances[0]?.balance || '';
 
-  const tokenSymbol = currentToken?.symbol || 'STC';
+  const tokenSymbol = currentToken?.symbol || 'ETH';
   const decimals = Number(currentToken?.decimals || 10);
   const tokenData = getTokenData(data);
   const tokenValue = getTokenValueParam(tokenData);

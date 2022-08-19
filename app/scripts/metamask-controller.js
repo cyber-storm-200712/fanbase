@@ -182,7 +182,7 @@ export default class MetamaskController extends EventEmitter {
       preferences: this.preferencesController.store,
       getNativeCurrency: () => {
         const { ticker } = this.networkController.getProviderConfig();
-        return ticker ?? 'STC';
+        return ticker ?? 'ETH';
       },
     });
 
@@ -370,7 +370,7 @@ export default class MetamaskController extends EventEmitter {
       );
     });
     const { ticker } = this.networkController.getProviderConfig();
-    this.currencyRateController.configure({ nativeCurrency: ticker ?? 'STC' });
+    this.currencyRateController.configure({ nativeCurrency: ticker ?? 'ETH' });
     this.networkController.lookupNetwork();
     this.messageManager = new MessageManager();
     this.personalMessageManager = new PersonalMessageManager();
@@ -945,7 +945,7 @@ export default class MetamaskController extends EventEmitter {
           'HD Key Tree',
         )[0];
         if (!primaryKeyring) {
-          throw new Error('StarMaskController - No HD Key Tree found');
+          throw new Error('FanbaseController - No HD Key Tree found');
         }
 
         this.selectFirstIdentity();
@@ -1000,7 +1000,7 @@ export default class MetamaskController extends EventEmitter {
         'HD Key Tree',
       )[0];
       if (!primaryKeyring) {
-        throw new Error('StarMaskController - No HD Key Tree found');
+        throw new Error('FanbaseController - No HD Key Tree found');
       }
 
       // seek out the first zero balance
@@ -1037,7 +1037,7 @@ export default class MetamaskController extends EventEmitter {
       } else {
         stcQuery.getResource(
           address,
-          '0x00000000000000000000000000000001::Account::Balance<0x00000000000000000000000000000001::STC::STC>',
+          '0x00000000000000000000000000000001::Account::Balance<0x00000000000000000000000000000001::ETH::ETH>',
           (error, res) => {
             if (error) {
               log.error(error);
@@ -1209,7 +1209,7 @@ export default class MetamaskController extends EventEmitter {
       //   break;
       default:
         throw new Error(
-          'StarMaskController:getKeyringForDevice - Unknown device',
+          'FanbaseController:getKeyringForDevice - Unknown device',
         );
     }
     let keyring = await this.keyringController.getKeyringsByType(
@@ -1326,7 +1326,7 @@ export default class MetamaskController extends EventEmitter {
       'HD Key Tree',
     )[0];
     if (!primaryKeyring) {
-      throw new Error('StarMaskController - No HD Key Tree found');
+      throw new Error('FanbaseController - No HD Key Tree found');
     }
     const { keyringController } = this;
     const oldAccounts = await keyringController.getAccounts();
@@ -1361,7 +1361,7 @@ export default class MetamaskController extends EventEmitter {
       'HD Key Tree',
     )[0];
     if (!primaryKeyring) {
-      throw new Error('StarMaskController - No HD Key Tree found');
+      throw new Error('FanbaseController - No HD Key Tree found');
     }
 
     const serialized = await primaryKeyring.serialize();
@@ -1369,7 +1369,7 @@ export default class MetamaskController extends EventEmitter {
 
     const accounts = await primaryKeyring.getAccounts();
     if (accounts.length < 1) {
-      throw new Error('StarMaskController - No accounts found');
+      throw new Error('FanbaseController - No accounts found');
     }
 
     try {
@@ -1519,7 +1519,7 @@ export default class MetamaskController extends EventEmitter {
    * @returns {Promise<Object>} Full state update.
    */
   signMessage(msgParams) {
-    log.info('StarMaskController - signMessage');
+    log.info('FanbaseController - signMessage');
     const msgId = msgParams.metamaskId;
 
     // sets the status op the message to 'approved'
@@ -1583,7 +1583,7 @@ export default class MetamaskController extends EventEmitter {
    * @returns {Promise<Object>} A full state update.
    */
   signPersonalMessage(msgParams) {
-    log.info('StarMaskController - signPersonalMessage');
+    log.info('FanbaseController - signPersonalMessage');
     const msgId = msgParams.metamaskId;
     const signingMessage = new starcoin_types.SigningMessage(arrayify(msgParams.data));
     const chainId = parseInt(msgParams.networkId, 10);
@@ -1649,7 +1649,7 @@ export default class MetamaskController extends EventEmitter {
    * @returns {Promise<Object>} A full state update.
    */
   async decryptMessageInline(msgParams) {
-    log.info('StarMaskController - decryptMessageInline');
+    log.info('FanbaseController - decryptMessageInline');
     // decrypt the message inline
     const msgId = msgParams.metamaskId;
     const msg = this.decryptMessageManager.getMsg(msgId);
@@ -1675,7 +1675,7 @@ export default class MetamaskController extends EventEmitter {
    * @returns {Promise<Object>} A full state update.
    */
   async decryptMessage(msgParams) {
-    log.info('StarMaskController - decryptMessage');
+    log.info('FanbaseController - decryptMessage');
     const msgId = msgParams.metamaskId;
     // sets the status op the message to 'approved'
     // and removes the metamaskId for decryption
@@ -1695,7 +1695,7 @@ export default class MetamaskController extends EventEmitter {
       // tells the listener that the message has been decrypted and can be returned to the dapp
       this.decryptMessageManager.setMsgStatusDecrypted(msgId, rawMess);
     } catch (error) {
-      log.info('StarMaskController - eth_decrypt failed.', error);
+      log.info('FanbaseController - eth_decrypt failed.', error);
       this.decryptMessageManager.errorMessage(msgId, error);
     }
     return this.getState();
@@ -1765,7 +1765,7 @@ export default class MetamaskController extends EventEmitter {
    * @returns {Promise<Object>} A full state update.
    */
   async encryptionPublicKey(msgParams) {
-    log.info('StarMaskController - encryptionPublicKey');
+    log.info('FanbaseController - encryptionPublicKey');
     const msgId = msgParams.metamaskId;
     // sets the status op the message to 'approved'
     // and removes the metamaskId for decryption
@@ -1784,7 +1784,7 @@ export default class MetamaskController extends EventEmitter {
       this.encryptionPublicKeyManager.setMsgStatusReceived(msgId, publicKey);
     } catch (error) {
       log.info(
-        'StarMaskController - eth_getEncryptionPublicKey failed.',
+        'FanbaseController - eth_getEncryptionPublicKey failed.',
         error,
       );
       this.encryptionPublicKeyManager.errorMessage(msgId, error);
@@ -1833,7 +1833,7 @@ export default class MetamaskController extends EventEmitter {
    * @returns {Object} Full state update.
    */
   async signTypedMessage(msgParams) {
-    log.info('StarMaskController - eth_signTypedData');
+    log.info('FanbaseController - eth_signTypedData');
     const msgId = msgParams.metamaskId;
     const { version } = msgParams;
     try {
@@ -1856,7 +1856,7 @@ export default class MetamaskController extends EventEmitter {
       this.typedMessageManager.setMsgStatusSigned(msgId, signature);
       return this.getState();
     } catch (error) {
-      log.info('StarMaskController - eth_signTypedData failed.', error);
+      log.info('FanbaseController - eth_signTypedData failed.', error);
       this.typedMessageManager.errorMessage(msgId, error);
       throw error;
     }
@@ -1920,7 +1920,7 @@ export default class MetamaskController extends EventEmitter {
       // network = 0xfe for `Localhost 9850`
       // network = { name: XXX, id: XXX_NETWORK_ID } for others
       const chainId = network.id ? network.id : Number(hexToDecimal(network));
-      const tokenCode = estimateGasParams.code ? estimateGasParams.code : '0x00000000000000000000000000000001::STC::STC'
+      const tokenCode = estimateGasParams.code ? estimateGasParams.code : '0x00000000000000000000000000000001::ETH::ETH'
       return this.keyringController.getPublicKeyFor(estimateGasParams.from)
         .then((publicKey) => {
           const params = {
@@ -1999,7 +1999,7 @@ export default class MetamaskController extends EventEmitter {
     const { hostname } = new URL(sender.url);
     // Check if new connection is blocked if phishing detection is on
     if (usePhishDetect && this.phishingController.test(hostname)) {
-      log.debug('StarMask - sending phishing warning for', hostname);
+      log.debug('Fanbase - sending phishing warning for', hostname);
       this.sendPhishingWarning(connectionStream, hostname);
       return;
     }
@@ -2541,7 +2541,7 @@ export default class MetamaskController extends EventEmitter {
   async updateAndSetCustomRpc(
     rpcUrl,
     chainId,
-    ticker = 'STC',
+    ticker = 'ETH',
     nickname,
     rpcPrefs,
   ) {
@@ -2573,7 +2573,7 @@ export default class MetamaskController extends EventEmitter {
   async setCustomRpc(
     rpcUrl,
     chainId,
-    ticker = 'STC',
+    ticker = 'ETH',
     nickname = '',
     rpcPrefs = {},
   ) {

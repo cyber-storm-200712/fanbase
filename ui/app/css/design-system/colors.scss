@@ -104,9 +104,9 @@ $ui-3: #bbc0c5;
 $ui-4: #6a737d;
 
 $main: #29b6af;
-$barnard: #ff4a8d;
-$proxima: #9064ff;
-$halley: #3099f2;
+$ropsten: #ff4a8d;
+$rinkeby: #9064ff;
+$goerli: #3099f2;
 
 $color-map: (
   'ui-1': $ui-1,
@@ -131,8 +131,8 @@ $color-map: (
   'success-2': $success-2,
   'success-3': $success-3,
   'main': $main,
-  'barnard': $barnard,
-  'proxima': $proxima,
-  'halley': $halley,
+  'ropsten': $ropsten,
+  'rinkeby': $rinkeby,
+  'goerli': $goerli,
   'transparent': transparent,
 );

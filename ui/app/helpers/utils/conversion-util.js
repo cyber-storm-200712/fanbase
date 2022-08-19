@@ -10,7 +10,7 @@
  * @param {string} [options.toCurrency = 'ETH' | 'USD'] - The desired currency of the result
  * @param {string} [options.fromNumericBase = 'hex' | 'dec' | 'BN'] - The numeric basic of the passed value.
  * @param {string} [options.toNumericBase = 'hex' | 'dec' | 'BN'] - The desired numeric basic of the result.
- * @param {string} [options.fromDenomination = 'NANOSTC'] - The denomination of the passed value
+ * @param {string} [options.fromDenomination = 'WEI'] - The denomination of the passed value
  * @param {string} [options.numberOfDecimals] - The desired number of decimals in the result
  * @param {string} [options.roundDown] - The desired number of decimals to round down to
  * @param {number} [options.conversionRate] - The rate to use to make the fromCurrency -> toCurrency conversion
@@ -37,14 +37,14 @@ const toBigNumber = {
   BN: (n) => new BigNumber(n.toString(16), 16),
 };
 const toNormalizedDenomination = {
-  NANOSTC: (bigNumber) => bigNumber.div(BIG_NUMBER_NANO_ETH_MULTIPLIER),
-  MILLISTC: (bigNumber) => bigNumber.div(BIG_NUMBER_MILLI_ETH_MULTIPLIER),
-  STC: (bigNumber) => bigNumber.div(BIG_NUMBER_ETH_MULTIPLIER),
+  WEI: (bigNumber) => bigNumber.div(BIG_NUMBER_NANO_ETH_MULTIPLIER),
+  GWEI: (bigNumber) => bigNumber.div(BIG_NUMBER_MILLI_ETH_MULTIPLIER),
+  ETH: (bigNumber) => bigNumber.div(BIG_NUMBER_ETH_MULTIPLIER),
 };
 const toSpecifiedDenomination = {
-  NANOSTC: (bigNumber) => bigNumber.times(BIG_NUMBER_NANO_ETH_MULTIPLIER).round(9),
-  MILLISTC: (bigNumber) => bigNumber.times(BIG_NUMBER_MILLI_ETH_MULTIPLIER).round(9),
-  STC: (bigNumber) => bigNumber.times(BIG_NUMBER_ETH_MULTIPLIER).round(9),
+  WEI: (bigNumber) => bigNumber.times(BIG_NUMBER_NANO_ETH_MULTIPLIER).round(9),
+  GWEI: (bigNumber) => bigNumber.times(BIG_NUMBER_MILLI_ETH_MULTIPLIER).round(9),
+  ETH: (bigNumber) => bigNumber.times(BIG_NUMBER_ETH_MULTIPLIER).round(9),
 };
 const baseChange = {
   hex: (n) => n.toString(16),
@@ -64,7 +64,7 @@ const isValidBase = (base) => {
 
 /**
  * Defines which type of denomination a value is in
- * @typedef {('NANOSTC' | 'MILLISTC' | 'STC')} EthDenomination
+ * @typedef {('WEI' | 'GWEI' | 'ETH')} EthDenomination
  */
 
 /**

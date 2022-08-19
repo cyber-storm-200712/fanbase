@@ -35,7 +35,7 @@ const mapStateToProps = (state, ownProps) => {
 
   return {
     nativeCurrency: getNativeCurrency(state),
-    // Do not show fiat, because we have the only one: STC
+    // Do not show fiat, because we have the only one: ETH
     // showFiat: isMainnet || Boolean(showFiatInTestnets),
     showFiat: false,
     totalInHex,

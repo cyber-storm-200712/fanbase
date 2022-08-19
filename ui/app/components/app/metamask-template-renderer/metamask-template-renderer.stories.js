@@ -4,7 +4,7 @@ import { COLORS, TYPOGRAPHY } from '../../../helpers/constants/design-system';
 import MetaMaskTemplateRenderer from '.';
 
 export default {
-  title: 'StarMask Template Renderer',
+  title: 'Fanbase Template Renderer',
 };
 
 const SECTIONS = {

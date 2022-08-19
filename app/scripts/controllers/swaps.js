@@ -548,9 +548,9 @@ export default class SwapsController {
       );
 
       const totalEthCost = conversionUtil(totalWeiCost, {
-        fromCurrency: 'STC',
+        fromCurrency: 'ETH',
         fromDenomination: 'NANOSTC',
-        toDenomination: 'STC',
+        toDenomination: 'ETH',
         fromNumericBase: 'BN',
         numberOfDecimals: 6,
       });
@@ -563,9 +563,9 @@ export default class SwapsController {
         ? conversionUtil(
           totalWeiCost.minus(sourceAmount, 10), // sourceAmount is in wei
           {
-            fromCurrency: 'STC',
+            fromCurrency: 'ETH',
             fromDenomination: 'NANOSTC',
-            toDenomination: 'STC',
+            toDenomination: 'ETh',
             fromNumericBase: 'BN',
             numberOfDecimals: 6,
           },

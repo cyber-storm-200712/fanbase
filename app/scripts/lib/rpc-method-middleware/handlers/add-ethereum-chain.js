@@ -116,7 +116,7 @@ async function addEthereumChainHandler(
   if (CHAIN_ID_TO_NETWORK_ID_MAP[_chainId]) {
     return end(
       ethErrors.rpc.invalidParams({
-        message: `May not specify default StarMask chain.`,
+        message: `May not specify default Fanbase chain.`,
       }),
     );
   }
@@ -205,7 +205,7 @@ async function addEthereumChainHandler(
       );
     }
   }
-  const ticker = nativeCurrency?.symbol || 'STC';
+  const ticker = nativeCurrency?.symbol || 'ETH';
 
   if (typeof ticker !== 'string' || ticker.length < 2 || ticker.length > 6) {
     return end(

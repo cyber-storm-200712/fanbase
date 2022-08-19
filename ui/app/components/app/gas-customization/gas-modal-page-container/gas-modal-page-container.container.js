@@ -346,7 +346,7 @@ function sumHexWEIsToRenderableEth(hexWEIs) {
   return formatETHFee(
     getValueFromWeiHex({
       value: hexWEIsSum,
-      toCurrency: 'STC',
+      toCurrency: 'ETH',
       numberOfDecimals: 6,
     }),
   );

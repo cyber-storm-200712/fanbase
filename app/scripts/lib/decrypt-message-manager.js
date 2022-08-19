@@ -18,7 +18,7 @@ const hexRe = /^[0-9A-Fa-f]+$/gu;
  * @property {number} id An id to track and identify the message object
  * @property {Object} msgParams The parameters to pass to the decryptMessage method once the decryption request is
  * approved.
- * @property {Object} msgParams.metamaskId Added to msgParams for tracking and identification within StarMask.
+ * @property {Object} msgParams.metamaskId Added to msgParams for tracking and identification within Fanbase.
  * @property {string} msgParams.data A hex string conversion of the raw buffer data of the decryption request
  * @property {number} time The epoch time at which the this message was created
  * @property {string} status Indicates whether the decryption request is 'unapproved', 'approved', 'decrypted' or 'rejected'
@@ -86,7 +86,7 @@ export default class DecryptMessageManager extends EventEmitter {
   addUnapprovedMessageAsync(msgParams, req) {
     return new Promise((resolve, reject) => {
       if (!msgParams.from) {
-        reject(new Error('StarMask Decryption: from field is required.'));
+        reject(new Error('Fanbase Decryption: from field is required.'));
         return;
       }
       const msgId = this.addUnapprovedMessage(msgParams, req);
@@ -98,7 +98,7 @@ export default class DecryptMessageManager extends EventEmitter {
           case 'rejected':
             reject(
               ethErrors.provider.userRejectedRequest(
-                'StarMask Decryption: User denied message decryption.',
+                'Fanbase Decryption: User denied message decryption.',
               ),
             );
             return;
@@ -108,7 +108,7 @@ export default class DecryptMessageManager extends EventEmitter {
           default:
             reject(
               new Error(
-                `StarMask Decryption: Unknown problem: ${JSON.stringify(
+                `Fanbase Decryption: Unknown problem: ${JSON.stringify(
                   msgParams,
                 )}`,
               ),
@@ -184,8 +184,8 @@ export default class DecryptMessageManager extends EventEmitter {
    * Approves a DecryptMessage. Sets the message status via a call to this.setMsgStatusApproved, and returns a promise
    * with the message params modified for proper decryption.
    *
-   * @param {Object} msgParams The msgParams to be used when eth_decrypt is called, plus data added by StarMask.
-   * @param {Object} msgParams.metamaskId Added to msgParams for tracking and identification within StarMask.
+   * @param {Object} msgParams The msgParams to be used when eth_decrypt is called, plus data added by Fanbase.
+   * @param {Object} msgParams.metamaskId Added to msgParams for tracking and identification within Fanbase.
    * @returns {Promise<object>} Promises the msgParams object with metamaskId removed.
    *
    */

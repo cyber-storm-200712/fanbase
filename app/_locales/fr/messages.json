@@ -53,16 +53,16 @@
     "message": "Ajouter un compte"
   },
   "addAcquiredTokens": {
-    "message": "Ajoutez les Token que vous avez acquis à l'aide de StarMask"
+    "message": "Ajoutez les Token que vous avez acquis à l'aide de Fanbase"
   },
   "addAlias": {
     "message": "Ajouter un alias"
   },
   "addEthereumChainConfirmationDescription": {
-    "message": "Cela permettra à ce réseau d'être utilisé dans StarMask."
+    "message": "Cela permettra à ce réseau d'être utilisé dans Fanbase."
   },
   "addEthereumChainConfirmationRisks": {
-    "message": "StarMask ne vérifie pas les réseaux personnalisés."
+    "message": "Fanbase ne vérifie pas les réseaux personnalisés."
   },
   "addEthereumChainConfirmationRisksLearnMore": {
     "message": "En savoir plus sur $1.",
@@ -164,7 +164,7 @@
     "description": "Le descriptif de l'application"
   },
   "appName": {
-    "message": "StarMask",
+    "message": "Fanbase",
     "description": "Le nom de l'application"
   },
   "approvalAndAggregatorTxFeeCost": {
@@ -217,7 +217,7 @@
     "message": "Verrouillage automatique (minutes)"
   },
   "autoLockTimeLimitDescription": {
-    "message": "Définissez le temps d'inactivité en minutes avant que StarMask ne se verrouille."
+    "message": "Définissez le temps d'inactivité en minutes avant que Fanbase ne se verrouille."
   },
   "average": {
     "message": "Moyenne"
@@ -229,7 +229,7 @@
     "message": "Retour à Tout"
   },
   "backupApprovalInfo": {
-    "message": "Ce code secret est nécessaire pour récupérer votre portefeuille en cas de perte de votre appareil, d'oubli de votre mot de passe, de réinstallation de StarMask ou d'accès à votre portefeuille sur un autre appareil."
+    "message": "Ce code secret est nécessaire pour récupérer votre portefeuille en cas de perte de votre appareil, d'oubli de votre mot de passe, de réinstallation de Fanbase ou d'accès à votre portefeuille sur un autre appareil."
   },
   "backupApprovalNotice": {
     "message": "Sauvegardez votre code secret de récupération pour protéger votre portefeuille et vos fonds."
@@ -266,10 +266,10 @@
     "message": "Votre navigateur n'est pas supporté..."
   },
   "builtInCalifornia": {
-    "message": "StarMask est conçu et fabriqué en Californie."
+    "message": "Fanbase est conçu et fabriqué en Californie."
   },
   "builtInChina": {
-    "message": "StarMask est conçu et fabriqué en Chine."
+    "message": "Fanbase est conçu et fabriqué en Chine."
   },
   "buy": {
     "message": "Acheter"
@@ -278,7 +278,7 @@
     "message": "Achetez des ETH avec Wyre"
   },
   "buyWithWyreDescription": {
-    "message": "Wyre vous permet d'utiliser une carte de débit pour déposer des ETH directement sur votre compte StarMask."
+    "message": "Wyre vous permet d'utiliser une carte de débit pour déposer des ETH directement sur votre compte Fanbase."
   },
   "bytes": {
     "message": "Octets"
@@ -302,7 +302,7 @@
     "message": "L'ID de chaîne utilisé pour signer les transactions pour ce réseau."
   },
   "chromeRequiredForHardwareWallets": {
-    "message": "Vous devez utiliser StarMask sur Google Chrome pour vous connecter à votre Hardware Wallet."
+    "message": "Vous devez utiliser Fanbase sur Google Chrome pour vous connecter à votre Hardware Wallet."
   },
   "clickToRevealSeed": {
     "message": "Cliquez ici pour révéler les mots secrets"
@@ -367,7 +367,7 @@
     "description": "$1 est le nombre de comptes auxquels le site/l'application web3 demande à se connecter ; cela remplacera $1 en connectToMultiple"
   },
   "connectWithMetaMask": {
-    "message": "Se connecter avec StarMask"
+    "message": "Se connecter avec Fanbase"
   },
   "connectedAccountsDescriptionPlural": {
     "message": "Vous avez $1 comptes connectés à ce site.",
@@ -377,7 +377,7 @@
     "message": "Vous avez 1 compte connecté à ce site."
   },
   "connectedAccountsEmptyDescription": {
-    "message": "StarMask n'est pas connecté à ce site. Pour vous connecter à un site web3, trouvez le bouton de connexion sur leur site."
+    "message": "Fanbase n'est pas connecté à ce site. Pour vous connecter à un site web3, trouvez le bouton de connexion sur leur site."
   },
   "connectedSites": {
     "message": "Sites connectés"
@@ -409,7 +409,7 @@
     "message": "Connexion au réseau de test Kovan"
   },
   "connectingToMainnet": {
-    "message": "Connexion à Starcoin Mainnet"
+    "message": "Connexion à Ethereum Mainnet"
   },
   "connectingToProxima": {
     "message": "Connexion au réseau de test Proxima"
@@ -517,7 +517,7 @@
     "message": "Token personnalisé"
   },
   "dataBackupFoundInfo": {
-    "message": "Certaines données de votre compte ont été sauvegardées lors d'une précédente installation de StarMask. Cela peut inclure vos paramètres, vos contacts et vos Tokens. Souhaitez-vous restaurer ces données maintenant ?"
+    "message": "Certaines données de votre compte ont été sauvegardées lors d'une précédente installation de Fanbase. Cela peut inclure vos paramètres, vos contacts et vos Tokens. Souhaitez-vous restaurer ces données maintenant ?"
   },
   "decimal": {
     "message": "Décimales de précision"
@@ -646,7 +646,7 @@
     "message": "Ne partagez jamais la phrase avec qui que ce soit."
   },
   "endOfFlowMessage5": {
-    "message": "Attention au phishing ! StarMask ne vous demandera jamais spontanément votre phrase de sauvegarde."
+    "message": "Attention au phishing ! Fanbase ne vous demandera jamais spontanément votre phrase de sauvegarde."
   },
   "endOfFlowMessage6": {
     "message": "Si vous avez besoin de sauvegarder à nouveau votre phrase de départ, vous pouvez la trouver dans Paramètres -> Sécurité."
@@ -656,7 +656,7 @@
     "description": "$1 est un lien cliquable avec du texte défini par la clé \"ici\". Le lien s'ouvrira sur un formulaire où les utilisateurs pourront soumettre des tickets d'assistance."
   },
   "endOfFlowMessage8": {
-    "message": "- StarMask ne peut pas récupérer votre phrase de sauvegarde ?"
+    "message": "- Fanbase ne peut pas récupérer votre phrase de sauvegarde ?"
   },
   "endOfFlowMessage9": {
     "message": "En savoir plus."
@@ -666,7 +666,7 @@
     "description": "$1 est la valeur de retour de chain.id à partir d'un point de terminaison RPC"
   },
   "ensNotFoundOnCurrentNetwork": {
-    "message": "Nom ENS introuvable sur le réseau actuel. Essayez de passer à Starcoin Mainnet."
+    "message": "Nom ENS introuvable sur le réseau actuel. Essayez de passer à Ethereum Mainnet."
   },
   "ensRegistrationError": {
     "message": "Erreur dans l'enregistrement du nom ENS"
@@ -708,7 +708,7 @@
     "description": "Message affiché sur la page d'erreur générique dans l'interface utilisateur contextuelle, $1 est un lien cliquable avec un texte défini par la clé \"ici\". Le lien s'ouvrira sur un formulaire où les utilisateurs pourront soumettre des tickets d'assistance."
   },
   "errorPageTitle": {
-    "message": "StarMask a rencontré une erreur",
+    "message": "Fanbase a rencontré une erreur",
     "description": "Titre de la page d'erreur générique"
   },
   "errorStack": {
@@ -882,7 +882,7 @@
     "message": "Connecter un wallet matériel"
   },
   "hardwareWalletsMsg": {
-    "message": "Sélectionnez un wallet matériel que vous souhaitez utiliser avec StarMask"
+    "message": "Sélectionnez un wallet matériel que vous souhaitez utiliser avec Fanbase"
   },
   "havingTroubleConnecting": {
     "message": "Vous rencontrez des difficultés pour vous connecter ?"
@@ -918,7 +918,7 @@
     "message": "Importer un compte"
   },
   "importAccountMsg": {
-    "message": " Les comptes importés ne seront pas associés à la phrase de sauvegarde de votre compte StarMask créé à l'origine."
+    "message": " Les comptes importés ne seront pas associés à la phrase de sauvegarde de votre compte Fanbase créé à l'origine."
   },
   "importAccountSeedPhrase": {
     "message": "Importer un compte avec une phrase de sauvegarde"
@@ -1069,7 +1069,7 @@
     "message": "Le temps de verrouillage est trop long"
   },
   "main": {
-    "message": "Starcoin Mainnet"
+    "message": "Ethereum Mainnet"
   },
   "max": {
     "message": "Max"
@@ -1084,7 +1084,7 @@
     "message": "Message"
   },
   "metaMaskConnectStatusParagraphOne": {
-    "message": "Vous avez maintenant plus de contrôle sur les connexions de votre compte dans StarMask."
+    "message": "Vous avez maintenant plus de contrôle sur les connexions de votre compte dans Fanbase."
   },
   "metaMaskConnectStatusParagraphThree": {
     "message": "Cliquez dessus pour gérer vos comptes connectés."
@@ -1096,10 +1096,10 @@
     "message": "Connexion à Starcoin et au Web décentralisé."
   },
   "metamaskSwapsOfflineDescription": {
-    "message": "StarMask Swaps est en cours de maintenance. Veuillez revenir plus tard."
+    "message": "Fanbase Swaps est en cours de maintenance. Veuillez revenir plus tard."
   },
   "metamaskVersion": {
-    "message": "Version StarMask"
+    "message": "Version Fanbase"
   },
   "metametricsCommitmentsAllowOptOut": {
     "message": "vous permettra toujours de vous désabonner via les paramètres"
@@ -1109,7 +1109,7 @@
     "description": "Cette chaîne est localisée séparément de certains des engagements afin que nous puissions la mettre en gras"
   },
   "metametricsCommitmentsIntro": {
-    "message": "StarMask"
+    "message": "Fanbase"
   },
   "metametricsCommitmentsNeverCollectIP": {
     "message": "ne collectera $1 votre adresse IP complète",
@@ -1127,10 +1127,10 @@
     "message": "Envoyer des événements de clics et de pages vues anonymisés"
   },
   "metametricsHelpImproveMetaMask": {
-    "message": "Aidez-nous à améliorer StarMask"
+    "message": "Aidez-nous à améliorer Fanbase"
   },
   "metametricsOptInDescription": {
-    "message": "StarMask souhaite collecter des données d'utilisation pour mieux comprendre comment nos utilisateurs interagissent avec l'extension. Ces données seront utilisées pour améliorer continuellement la convivialité et l'expérience utilisateur de notre produit et de l'écosystème Starcoin."
+    "message": "Fanbase souhaite collecter des données d'utilisation pour mieux comprendre comment nos utilisateurs interagissent avec l'extension. Ces données seront utilisées pour améliorer continuellement la convivialité et l'expérience utilisateur de notre produit et de l'écosystème Starcoin."
   },
   "mismatchedChain": {
     "message": "Les détails du réseau pour cet ID de chaîne ne correspondent pas à nos enregistrements. Nous vous recommandons de payer $1 avant de continuer.",
@@ -1183,10 +1183,10 @@
     "message": "Mes comptes de wallet"
   },
   "myWalletAccountsDescription": {
-    "message": "Tous vos comptes créés par StarMask seront automatiquement ajoutés à cette section."
+    "message": "Tous vos comptes créés par Fanbase seront automatiquement ajoutés à cette section."
   },
   "needEtherInWallet": {
-    "message": "Pour interagir avec des applications décentralisées à l'aide de StarMask, vous aurez besoin de STC dans votre wallet."
+    "message": "Pour interagir avec des applications décentralisées à l'aide de Fanbase, vous aurez besoin de STC dans votre wallet."
   },
   "needImportFile": {
     "message": "Vous devez sélectionner un fichier à importer.",
@@ -1245,7 +1245,7 @@
     "message": "Nouveau mot de passe (min 8 caractères)"
   },
   "newToMetaMask": {
-    "message": "Nouveau sur StarMask ?"
+    "message": "Nouveau sur Fanbase ?"
   },
   "newTotal": {
     "message": "Nouveau total"
@@ -1258,7 +1258,7 @@
   },
   "nextNonceWarning": {
     "message": "Le nonce est supérieur au nonce suggéré de $1",
-    "description": "Le prochain nonce selon la logique interne de StarMask"
+    "description": "Le prochain nonce selon la logique interne de Fanbase"
   },
   "nftBody": {
     "message": "Corps NFT"
@@ -1376,7 +1376,7 @@
     "message": "Participer à MetaMetrics"
   },
   "participateInMetaMetricsDescription": {
-    "message": "Participez à MetaMetrics pour nous aider à améliorer StarMask"
+    "message": "Participez à MetaMetrics pour nous aider à améliorer Fanbase"
   },
   "password": {
     "message": "Mot de passe"
@@ -1629,10 +1629,10 @@
     "message": "Sélectionnez un compte"
   },
   "selectAnAccountAlreadyConnected": {
-    "message": "Ce compte a déjà été connecté à StarMask"
+    "message": "Ce compte a déjà été connecté à Fanbase"
   },
   "selectAnAccountHelp": {
-    "message": "Sélectionnez le compte à afficher dans StarMask"
+    "message": "Sélectionnez le compte à afficher dans Fanbase"
   },
   "selectEachPhrase": {
     "message": "Veuillez sélectionner chaque mot en vous assurant qu'ils sont corrects."
@@ -1766,7 +1766,7 @@
     "message": "Erreur lors de la récupération des journaux d'état."
   },
   "stateLogFileName": {
-    "message": "Journaux d'état de StarMask"
+    "message": "Journaux d'état de Fanbase"
   },
   "stateLogs": {
     "message": "Journaux d'état"
@@ -1842,7 +1842,7 @@
   },
   "swapCheckingQuote": {
     "message": "Vérifie $1",
-    "description": "Présenté à l'utilisateur lors du chargement du devis. $1 est le nom d'un agrégateur. Le message indique que StarMask vérifie actuellement si cet agrégateur a un échange/devis pour leur échange demandé."
+    "description": "Présenté à l'utilisateur lors du chargement du devis. $1 est le nom d'un agrégateur. Le message indique que Fanbase vérifie actuellement si cet agrégateur a un échange/devis pour leur échange demandé."
   },
   "swapCustom": {
     "message": "custom"
@@ -1854,7 +1854,7 @@
     "message": "Modifier la limite"
   },
   "swapEnableDescription": {
-    "message": "Ceci est requis et donne à StarMask la permission d'échanger $1.",
+    "message": "Ceci est requis et donne à Fanbase la permission d'échanger $1.",
     "description": "Fournit à l'utilisateur des informations sur la transaction d'approbation requise pour les swaps. $1 sera le symbole d'un Token approuvé pour les échanges."
   },
   "swapEstimatedNetworkFee": {
@@ -1896,13 +1896,13 @@
     "message": "Vous voulez en savoir plus ?"
   },
   "swapIntroLearnMoreLink": {
-    "message": "En savoir plus sur les échanges StarMask"
+    "message": "En savoir plus sur les échanges Fanbase"
   },
   "swapIntroLiquiditySourcesLabel": {
     "message": "Les sources de liquidité comprennent:"
   },
   "swapIntroPopupSubTitle": {
-    "message": "Vous pouvez désormais échanger des Tokens directement dans votre wallet StarMask. StarMask Swaps combine plusieurs agrégateurs d'échange décentralisés, des teneurs de marché professionnels et des DEX individuels pour garantir que les utilisateurs de StarMask obtiennent toujours le meilleur prix avec les frais de réseau les plus bas."
+    "message": "Vous pouvez désormais échanger des Tokens directement dans votre wallet Fanbase. Fanbase Swaps combine plusieurs agrégateurs d'échange décentralisés, des teneurs de marché professionnels et des DEX individuels pour garantir que les utilisateurs de Fanbase obtiennent toujours le meilleur prix avec les frais de réseau les plus bas."
   },
   "swapIntroPopupTitle": {
     "message": "Le swap de Tokens est arrivé !"
@@ -1924,7 +1924,7 @@
     "message": "Glissement maximum"
   },
   "swapMetaMaskFee": {
-    "message": "Frais StarMask"
+    "message": "Frais Fanbase"
   },
   "swapMetaMaskFeeDescription": {
     "message": "Nous trouvons le meilleur prix parmi les principales sources de liquidité, à chaque fois. Des frais de $1 sont automatiquement pris en compte dans ce devis.",
@@ -1935,7 +1935,7 @@
     "description": "$1 est le nombre de devis que l'utilisateur peut sélectionner lors de l'ouverture de la liste des devis sur l'écran 'Afficher les devis'"
   },
   "swapNetworkFeeSummary": {
-    "message": "Les frais de réseau couvrent le coût de traitement de votre échange et de son stockage sur le réseau Starcoin. StarMask ne profite pas de ces frais."
+    "message": "Les frais de réseau couvrent le coût de traitement de votre échange et de son stockage sur le réseau Starcoin. Fanbase ne profite pas de ces frais."
   },
   "swapNewQuoteIn": {
     "message": "Nouvelles devises dans $1",
@@ -1972,7 +1972,7 @@
     "message": "Si le prix change entre le moment où votre commande est passée et celle où elle est confirmée, cela s'appelle \"glissement\". Votre échange s'annulera automatiquement si le glissement dépasse votre paramètre de \"tolérance de glissement\"."
   },
   "swapQuoteIncludesRate": {
-    "message": "Le devis comprend des frais StarMask de $1",
+    "message": "Le devis comprend des frais Fanbase de $1",
     "description": "Fournit des informations sur les frais que starmask prend pour les swaps. $1 est un nombre décimal."
   },
   "swapQuoteNofN": {
@@ -2117,7 +2117,7 @@
     "message": "Voir en activité"
   },
   "switchEthereumChainConfirmationDescription": {
-    "message": "Cela basculera le réseau sélectionné dans StarMask vers un réseau précédemment ajouté:"
+    "message": "Cela basculera le réseau sélectionné dans Fanbase vers un réseau précédemment ajouté:"
   },
   "switchEthereumChainConfirmationTitle": {
     "message": "Autoriser ce site à changer de réseau ?"
@@ -2147,16 +2147,16 @@
     "message": "Assurez-vous que personne d'autre ne regarde votre écran lorsque vous scannez ce code"
   },
   "syncWithMobileComplete": {
-    "message": "Vos données ont été synchronisées avec succès. Profitez de l'application mobile StarMask !"
+    "message": "Vos données ont été synchronisées avec succès. Profitez de l'application mobile Fanbase !"
   },
   "syncWithMobileDesc": {
-    "message": "Vous pouvez synchroniser vos comptes et informations avec votre appareil mobile. Ouvrez l'application mobile StarMask, accédez à \"Paramètres\" et appuyez sur \"Synchroniser depuis l'extension du navigateur\""
+    "message": "Vous pouvez synchroniser vos comptes et informations avec votre appareil mobile. Ouvrez l'application mobile Fanbase, accédez à \"Paramètres\" et appuyez sur \"Synchroniser depuis l'extension du navigateur\""
   },
   "syncWithMobileDescNewUsers": {
-    "message": "Si vous venez d'ouvrir l'application StarMask Mobile pour la première fois, suivez simplement les étapes sur votre téléphone."
+    "message": "Si vous venez d'ouvrir l'application Fanbase Mobile pour la première fois, suivez simplement les étapes sur votre téléphone."
   },
   "syncWithMobileScanThisCode": {
-    "message": "Scannez ce code avec votre application mobile StarMask"
+    "message": "Scannez ce code avec votre application mobile Fanbase"
   },
   "syncWithMobileTitle": {
     "message": "Synchroniser avec le mobile"
@@ -2274,7 +2274,7 @@
     "message": "Réessayer"
   },
   "typePassword": {
-    "message": "Tapez votre mot de passe StarMask"
+    "message": "Tapez votre mot de passe Fanbase"
   },
   "unapproved": {
     "message": "Désapprouvé"
@@ -2380,7 +2380,7 @@
     "description": "$1 est un lien cliquable."
   },
   "welcome": {
-    "message": "Bienvenue sur StarMask"
+    "message": "Bienvenue sur Fanbase"
   },
   "welcomeBack": {
     "message": "Content de te revoir!"

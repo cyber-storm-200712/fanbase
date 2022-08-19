@@ -156,7 +156,7 @@ export default class MetaMetricsController {
   _buildContext(referrer, page = METAMETRICS_BACKGROUND_PAGE_OBJECT) {
     return {
       app: {
-        name: 'StarMask Extension',
+        name: 'Fanbase Extension',
         version: this.version,
       },
       userAgent: window.navigator.userAgent,

@@ -59,7 +59,7 @@ export default class DetectTokensController {
       result = await this._getTokenBalances(tokensToDetect);
     } catch (error) {
       warn(
-        `StarMask - DetectTokensController single call balance fetch failed`,
+        `Fanbase - DetectTokensController single call balance fetch failed`,
         error,
       );
       return;

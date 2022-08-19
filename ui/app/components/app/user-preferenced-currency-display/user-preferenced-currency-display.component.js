@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
-import { PRIMARY, SECONDARY, STC } from '../../../helpers/constants/common';
+import { PRIMARY, SECONDARY, ETH } from '../../../helpers/constants/common';
 import CurrencyDisplay from '../../ui/currency-display';
 import { useUserPreferencedCurrency } from '../../../hooks/useUserPreferencedCurrency';
 
@@ -21,8 +21,8 @@ export default function UserPreferencedCurrencyDisplay({
   });
   const prefixComponent = useMemo(() => {
     return (
-      currency === STC &&
-      showEthLogo && <img src="/images/stc_logo.svg" height={ethLogoHeight} alt="" />
+      currency === ETH &&
+      showEthLogo && <img src="/images/eth2.png" height={ethLogoHeight} alt="" />
     );
   }, [currency, showEthLogo, ethLogoHeight]);
 

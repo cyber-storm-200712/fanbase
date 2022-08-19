@@ -1,4 +1,4 @@
-# StarMask
+# Fanbase
 
 A blockchain wallet browser extension for Starcoin blockchain.
 

@@ -1449,7 +1449,7 @@ export function addToken(
 ) {
   return (dispatch) => {
     if (!code) {
-      throw new Error('StarMask - Cannot add token without code');
+      throw new Error('Fanbase - Cannot add token without code');
     }
     if (!dontShowLoadingIndicator) {
       dispatch(showLoadingIndication());
@@ -1758,7 +1758,7 @@ export function editRpc(
   };
 }
 
-export function setRpcTarget(newRpc, chainId, ticker = 'STC', nickname) {
+export function setRpcTarget(newRpc, chainId, ticker = 'ETH', nickname) {
   return async (dispatch) => {
     log.debug(
       `background.setRpcTarget: ${ newRpc } ${ chainId } ${ ticker } ${ nickname }`,
@@ -3055,7 +3055,7 @@ export function transferNFT(meta, body, id, to) {
   return async (dispatch, getState) => {
     try {
       if (!meta || !body) {
-        throw new Error('StarMask - Cannot transfer nft without meta and body');
+        throw new Error('Fanbase - Cannot transfer nft without meta and body');
       }
       const state = getState();
       const { selectedAddress } = state.starmask;
@@ -3083,7 +3083,7 @@ export function addNFT(meta, body) {
   return async (dispatch, getState) => {
     try {
       if (!meta || !body) {
-        throw new Error('StarMask - Cannot add nft without meta and body');
+        throw new Error('Fanbase - Cannot add nft without meta and body');
       }
       const state = getState();
       const { selectedAddress } = state.starmask;

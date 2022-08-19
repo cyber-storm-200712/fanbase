@@ -7,8 +7,9 @@ import {
   conversionUtil,
   multiplyCurrencies,
 } from '../../../helpers/utils/conversion-util';
-import { STC } from '../../../helpers/constants/common';
+import { ETH } from '../../../helpers/constants/common';
 import { addHexPrefix } from '../../../../../app/scripts/lib/util';
+import { ethErrors } from 'eth-rpc-errors';
 
 /**
  * Component that allows user to enter token values as a number, and props receive a converted
@@ -115,16 +116,16 @@ export default class TokenInput extends PureComponent {
       currency = currentCurrency;
       numberOfDecimals = 2;
     } else {
-      // Display STC
-      currency = STC;
+      // Display ETH
+      currency = ethErrors;
       numberOfDecimals = 6;
     }
 
     const decimalEthValue = decimalValue * tokenExchangeRate || 0;
     const hexWeiValue = getWeiHexFromDecimalValue({
       value: decimalEthValue,
-      fromCurrency: STC,
-      fromDenomination: STC,
+      fromCurrency: ETH,
+      fromDenomination: ETH,
     });
 
     return tokenExchangeRate ? (

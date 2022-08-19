@@ -137,7 +137,7 @@ export default class TxGasUtil {
       if (txMeta.txParams.to
         && txMeta.type === TRANSACTION_TYPES.SENT_ETHER) {
         const functionId = '0x1::TransferScripts::peer_to_peer_v2'
-        const strTypeArgs = ['0x1::STC::STC']
+        const strTypeArgs = ['0x1::ETH::ETH']
         const tyArgs = utils.tx.encodeStructTypeTags(strTypeArgs)
         const sendAmountNanoSTC = hexToBn(txMeta.txParams.value)
         const amountSCSHex = (function () {

@@ -5,11 +5,11 @@ import * as stcUtil from '@starcoin/stc-util';
 import { DateTime } from 'luxon';
 import { addHexPrefix } from '../../../../app/scripts/lib/util';
 import {
-  BARNARD_CHAIN_ID,
-  PROXIMA_CHAIN_ID,
+  ROPSTEN_CHAIN_ID,
+  RINKEBY_CHAIN_ID,
   LOCALHOST_CHAIN_ID,
   MAINNET_CHAIN_ID,
-  HALLEY_CHAIN_ID,
+  GOERLI_CHAIN_ID,
 } from '../../../../shared/constants/network';
 
 // formatData :: ( date: <Unix Timestamp> ) -> String
@@ -55,9 +55,9 @@ export function isDefaultMetaMaskChain(chainId) {
   if (
     !chainId ||
     chainId === MAINNET_CHAIN_ID ||
-    chainId === BARNARD_CHAIN_ID ||
-    chainId === PROXIMA_CHAIN_ID ||
-    chainId === HALLEY_CHAIN_ID ||
+    chainId === ROPSTEN_CHAIN_ID ||
+    chainId === RINKEBY_CHAIN_ID ||
+    chainId === GOERLI_CHAIN_ID ||
     chainId === LOCALHOST_CHAIN_ID
   ) {
     return true;
@@ -185,7 +185,7 @@ export function formatBalance(
   balance,
   decimalsToKeep,
   needsParse = true,
-  ticker = 'STC',
+  ticker = 'ETH',
 ) {
   const parsed = needsParse ? parseBalance(balance) : balance.split('.');
   const beforeDecimal = parsed[0];

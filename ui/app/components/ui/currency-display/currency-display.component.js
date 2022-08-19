@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { NANOSTC } from '../../../helpers/constants/common';
+import { WEI } from '../../../helpers/constants/common';
 import { useCurrencyDisplay } from '../../../hooks/useCurrencyDisplay';
 
 export default function CurrencyDisplay({
@@ -53,7 +53,7 @@ CurrencyDisplay.propTypes = {
   className: PropTypes.string,
   currency: PropTypes.string,
   'data-testid': PropTypes.string,
-  denomination: PropTypes.oneOf([NANOSTC]),
+  denomination: PropTypes.oneOf([WEI]),
   displayValue: PropTypes.string,
   hideLabel: PropTypes.bool,
   hideTitle: PropTypes.bool,

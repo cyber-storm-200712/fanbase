@@ -32,9 +32,9 @@ const ConfirmDetailTokenChanges = (props) => {
     true
   );
   const currencySTC = {
-    code: "0x00000000000000000000000000000001::STC::STC",
+    code: "0x00000000000000000000000000000001::ETH::ETH",
     decimals: 9,
-    symbol: "STC",
+    symbol: "ETH",
     accepted: true,
     balance: accountBalance,
   }

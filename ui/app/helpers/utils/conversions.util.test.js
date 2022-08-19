@@ -1,14 +1,14 @@
 import assert from 'assert';
-import { STC } from '../constants/common';
+import { ETH } from '../constants/common';
 import * as utils from './conversions.util';
 
 describe('conversion utils', function () {
   describe('getWeiHexFromDecimalValue', function () {
-    it('should correctly convert 0 in STC', function () {
+    it('should correctly convert 0 in ETH', function () {
       const weiValue = utils.getWeiHexFromDecimalValue({
         value: '0',
-        fromCurrency: STC,
-        fromDenomination: STC,
+        fromCurrency: ETH,
+        fromDenomination: ETH,
       });
       assert.strictEqual(weiValue, '0');
     });

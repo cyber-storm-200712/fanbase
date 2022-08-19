@@ -34,7 +34,7 @@ export default function MetaMaskTranslation({ translationKey, variables }) {
       ) {
         if (!variable.key) {
           throw new Error(
-            `When using StarMask Template Language in a StarMaskTranslation variable, you must provide a key for the section regardless of syntax.
+            `When using Fanbase Template Language in a FanbaseTranslation variable, you must provide a key for the section regardless of syntax.
             Section with element '${variable.element}' for translationKey: '${translationKey}' has no key property`,
           );
         }
@@ -44,7 +44,7 @@ export default function MetaMaskTranslation({ translationKey, variables }) {
           variable.children.length > 2
         ) {
           throw new Error(
-            'StarMaskTranslation only renders templates with a single section and maximum two children',
+            'FanbaseTranslation only renders templates with a single section and maximum two children',
           );
         } else if (
           (variable.children?.[0]?.children !== undefined &&
@@ -53,7 +53,7 @@ export default function MetaMaskTranslation({ translationKey, variables }) {
             typeof variable.children[1].children !== 'string')
         ) {
           throw new Error(
-            'StarMaskTranslation does not allow for component trees of non trivial depth',
+            'FanbaseTranslation does not allow for component trees of non trivial depth',
           );
         }
         return (

@@ -175,17 +175,17 @@ async function fetchEthGasPriceEstimates(state) {
   // const safeLowGasPriceInDecGWEI = getValueFromWeiHex({
   //   value: decimalToHex(parseInt(gasPrice, 10) / 10),
   //   numberOfDecimals: 6,
-  //   toDenomination: 'MILLISTC',
+  //   toDenomination: 'GWEI',
   // });
   const averageGasPriceInDecGWEI = getValueFromWeiHex({
     value: decimalToHex(parseInt(gasPrice, 10)),
     numberOfDecimals: 6,
-    toDenomination: 'MILLISTC',
+    toDenomination: 'GWEI',
   });
   const fastGasPriceInDecGWEI = getValueFromWeiHex({
     value: decimalToHex(parseInt(gasPrice, 10) * 10),
     numberOfDecimals: 6,
-    toDenomination: 'MILLISTC',
+    toDenomination: 'GWEI',
   });
   const basicEstimates = {
     // safeLow: Number(safeLowGasPriceInDecGWEI),

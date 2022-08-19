@@ -46,7 +46,7 @@ const tokenTransactionFilter = ({
   if (TOKEN_CATEGORY_HASH[type]) {
     return false;
   } else if (type === TRANSACTION_TYPES.SWAP) {
-    return destinationTokenSymbol === 'STC' || sourceTokenSymbol === 'STC';
+    return destinationTokenSymbol === 'ETH' || sourceTokenSymbol === 'ETH';
   }
   return true;
 };

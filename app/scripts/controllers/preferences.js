@@ -544,7 +544,7 @@ export default class PreferencesController {
   addToFrequentRpcList(
     rpcUrl,
     chainId,
-    ticker = 'STC',
+    ticker = 'ETH',
     nickname = '',
     rpcPrefs = {},
   ) {

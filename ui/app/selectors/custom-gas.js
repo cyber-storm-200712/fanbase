@@ -106,8 +106,8 @@ export function isCustomPriceSafe(state) {
     {
       value: customGasPrice,
       fromNumericBase: 'hex',
-      fromDenomination: 'NANOSTC',
-      toDenomination: 'MILLISTC',
+      fromDenomination: 'WEI',
+      toDenomination: 'GWEI',
     },
     { value: safeLow, fromNumericBase: 'dec' },
   );
@@ -170,8 +170,8 @@ export function isCustomPriceExcessive(state, checkSend = false) {
     {
       fromNumericBase: 'dec',
       value: fastPrice * 10,
-      fromDenomination: 'MILLISTC',
-      toDenomination: 'NANOSTC',
+      fromDenomination: 'GWEI',
+      toDenomination: 'WEI',
     },
   );
 
@@ -186,7 +186,7 @@ export function basicPriceEstimateToETHTotal(
   return conversionUtil(calcGasTotal(gasLimit, estimate), {
     fromNumericBase: 'hex',
     toNumericBase: 'dec',
-    fromDenomination: 'MILLISTC',
+    fromDenomination: 'GWEI',
     numberOfDecimals,
   });
 }
@@ -195,7 +195,7 @@ export function getRenderableEthFee(
   estimate,
   gasLimit,
   numberOfDecimals = 9,
-  nativeCurrency = 'STC',
+  nativeCurrency = 'ETH',
 ) {
   const value = conversionUtil(estimate, {
     fromNumericBase: 'dec',
@@ -228,8 +228,8 @@ export function priceEstimateToWei(priceEstimate) {
   return conversionUtil(priceEstimate, {
     fromNumericBase: 'hex',
     toNumericBase: 'hex',
-    fromDenomination: 'MILLISTC',
-    toDenomination: 'NANOSTC',
+    fromDenomination: 'GWEI',
+    toDenomination: 'WEI',
     numberOfDecimals: 6,
   });
 }
