@@ -1,6 +1,6 @@
 # stc-simple-keyring
 
-A simple JS class wrapped around [stc-wallet](https://github.com/starcoinorg/stc-wallet) designed to expose an interface common to many different signing strategies to be used in a `KeyringController`; such as the one used in [StarMask](https://starcoin.org)
+A simple JS class wrapped around [stc-wallet](https://github.com/starcoinorg/stc-wallet) designed to expose an interface common to many different signing strategies to be used in a `KeyringController`; such as the one used in [Fanbase](https://starcoin.org)
 
 ## The Keyring Class Protocol
 
