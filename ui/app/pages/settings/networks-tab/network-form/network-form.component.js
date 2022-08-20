@@ -161,9 +161,14 @@ export default class NetworkForm extends PureComponent {
         blockExplorerUrl,
       } = this.state;
 
+      console.log('State:', this.state);
+
       const formChainId = stateChainId.trim().toLowerCase();
       // Ensure chainId is a 0x-prefixed, lowercase hex string
       let chainId = formChainId;
+
+      console.log('ChainId', chainId);
+
       if (!chainId.startsWith('0x')) {
         chainId = `0x${parseInt(chainId, 10).toString(16)}`;
       }
@@ -172,6 +177,9 @@ export default class NetworkForm extends PureComponent {
         this.setState({
           isSubmitting: false,
         });
+
+        console.log('Rejected here');
+
         return;
       }
 
@@ -358,15 +366,28 @@ export default class NetworkForm extends PureComponent {
     let providerError;
 
     try {
-      endpointChain = await jsonRpcRequest(rpcUrl, 'chain.id');
+      endpointChain = await jsonRpcRequest(rpcUrl, 'eth_chainId');
+      console.log('Passed at jsonRpcRequest');
     } catch (err) {
+      console.log('Rejected here again');
       log.warn('Failed to fetch the chainId from the endpoint.', err);
       providerError = err;
     }
-    endpointChainId = endpointChain && endpointChain.id && `0x${endpointChain.id.toString(16)}`;
+
+    console.log('Endpointchain:', endpointChain);
+
+    endpointChainId = endpointChain;
+    // endpointChainId =
+    // endpointChain && endpointChain.id && `0x${endpointChain.id.toString(16)}`;
+
+    console.log('EndpointChainId:', endpointChainId);
+
     if (providerError || typeof endpointChainId !== 'string') {
+      console.log('failedToFetchChainId', providerError, endpointChainId);
       errorMessage = t('failedToFetchChainId');
     } else if (parsedChainId !== endpointChainId) {
+      console.log('Different chain ids:', parsedChainId, endpointChainId);
+
       // Here, we are in an error state. The endpoint should always return a
       // hexadecimal string. If the user entered a decimal string, we attempt
       // to convert the endpoint's return value to decimal before rendering it

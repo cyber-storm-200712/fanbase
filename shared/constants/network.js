@@ -18,9 +18,9 @@ export const GOERLI_CHAIN_ID = '0x5';
 export const LOCALHOST_CHAIN_ID = '0x539';
 
 export const MAINNET_RPC_URL = 'https://mainnet.infura.io/v3/';
-export const ROPSTEN_RPC_URL = 'https://ropsten.infura.io/v3/';
-export const RINKEBY_RPC_URL = 'https://rinkeby.infura.io/v3/';
-export const GOERLI_RPC_URL = 'https://goerli.infura.io/v3/';
+export const ROPSTEN_RPC_URL = 'https://rpc.ankr.com/eth_ropsten/';
+export const RINKEBY_RPC_URL = 'https://rpc.ankr.com/eth_rinkeby/';
+export const GOERLI_RPC_URL = 'https://rpc.goerli.mudit.blog/';
 export const LOCALHOST_RPC_URL = 'http://localhost:8545';
 
 /**

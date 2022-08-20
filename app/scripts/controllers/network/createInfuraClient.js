@@ -41,6 +41,7 @@ function createNetworkAndChainIdMiddleware({ network }) {
 
   return createScaffoldMiddleware({
     eth_chainId: chainId,
+    // 'chain.id': chainId,
     net_version: networkId,
   });
 }
