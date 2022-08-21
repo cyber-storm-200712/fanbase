@@ -10,7 +10,7 @@ import createEngineStream from 'json-rpc-middleware-stream/engineStream';
 import createFilterMiddleware from 'eth-json-rpc-filters';
 import createSubscriptionManager from 'eth-json-rpc-filters/subscriptionManager';
 import providerAsMiddleware from '@starcoin/stc-json-rpc-middleware/providerAsMiddleware';
-import KeyringController from '@starcoin/stc-keyring-controller';
+import KeyringController from '../../lib/@starcoin/stc-keyring-controller';
 import { Mutex } from 'await-semaphore';
 import {
   stripHexPrefix,
@@ -21,9 +21,14 @@ import {
 import { utils, starcoin_types, encoding } from '@starcoin/starcoin';
 import BigNumber from 'bignumber.js';
 import log from 'loglevel';
-import OneKeyKeyring from '@starcoin/stc-onekey-keyring';
-import MutiSignKeyring from '@starcoin/stc-multisign-keyring';
+// import OneKeyKeyring from '../../lib/@starcoin/stc-onekey-keyring';
+// import MutiSignKeyring from '@starcoin/stc-multisign-keyring';
 // import LedgerBridgeKeyring from '@metamask/eth-ledger-bridge-keyring';
+import TrezorKeyring from '../../lib/keyrings/trezor_keyring';
+import LedgerBridgeKeyring from '@metamask/eth-ledger-bridge-keyring';
+import LatticeKeyring from '../../lib/keyrings/lattice_keyring';
+import { MetaMaskKeyring as QRHardwareKeyring } from '../../lib/keyrings/metamask_keyring';
+
 import StcQuery from '@starcoin/stc-query';
 import nanoid from 'nanoid';
 import contractMap from '@starcoin/contract-metadata';
@@ -246,7 +251,15 @@ export default class MetamaskController extends EventEmitter {
     });
 
     // const additionalKeyrings = [TrezorKeyring, LedgerBridgeKeyring];
-    const additionalKeyrings = [OneKeyKeyring, MutiSignKeyring];
+    // const additionalKeyrings = [OneKeyKeyring, LedgerBridgeKeyring];
+
+    const additionalKeyrings = [
+      TrezorKeyring,
+      LedgerBridgeKeyring,
+      LatticeKeyring,
+      QRHardwareKeyring,
+    ];
+
     this.keyringController = new KeyringController({
       keyringTypes: additionalKeyrings,
       initState: initState.KeyringController,
@@ -468,7 +481,6 @@ export default class MetamaskController extends EventEmitter {
     ) {
       this.submitPassword(password);
     }
-
   }
 
   /**
@@ -479,7 +491,7 @@ export default class MetamaskController extends EventEmitter {
     const providerOpts = {
       static: {
         eth_syncing: false,
-        web3_clientVersion: `MetaMask/v${ version }`,
+        web3_clientVersion: `MetaMask/v${version}`,
       },
       version,
       // account mgmt
@@ -545,7 +557,8 @@ export default class MetamaskController extends EventEmitter {
     const { network } = memState || this.getState();
     return {
       chainId: this.networkController.getCurrentChainId(),
-      networkVersion: network && network.id && network.id.toString() || undefined,
+      networkVersion:
+        (network && network.id && network.id.toString()) || undefined,
     };
   }
 
@@ -755,7 +768,10 @@ export default class MetamaskController extends EventEmitter {
         txController.addUnapprovedTransaction,
         txController,
       ),
-      handlePendingTxsOffline: nodeify(txController.handlePendingTxsOffline, txController),
+      handlePendingTxsOffline: nodeify(
+        txController.handlePendingTxsOffline,
+        txController,
+      ),
       signMultiSignTransaction: nodeify(this.signMultiSignTransaction, this),
 
       // messageManager
@@ -1041,13 +1057,18 @@ export default class MetamaskController extends EventEmitter {
           (error, res) => {
             if (error) {
               log.error(error);
-              if (error.message && error.message === 'Invalid params: unable to parse AccoutAddress.') {
+              if (
+                error.message &&
+                error.message ===
+                  'Invalid params: unable to parse AccoutAddress.'
+              ) {
                 resolve('0x0');
               } else {
                 reject(error);
               }
             } else {
-              const balanceDecimal = res && res.value[0][1].Struct.value[0][1].U128 || 0;
+              const balanceDecimal =
+                (res && res.value[0][1].Struct.value[0][1].U128) || 0;
               const balanceHex = new BigNumber(balanceDecimal, 10).toString(16);
               const balance = addHexPrefix(balanceHex);
               resolve(balance || '0x0');
@@ -1083,15 +1104,13 @@ export default class MetamaskController extends EventEmitter {
         filteredAccountTokens[checksummedAddress][chainId] =
           chainId === MAINNET_CHAIN_ID
             ? accountTokens[address][chainId].filter(
-              ({ address: tokenAddress }) => {
-                const checksumAddress = toChecksumAddress(
-                  tokenAddress,
-                );
-                return contractMap[checksumAddress]
-                  ? contractMap[checksumAddress].erc20
-                  : true;
-              },
-            )
+                ({ address: tokenAddress }) => {
+                  const checksumAddress = toChecksumAddress(tokenAddress);
+                  return contractMap[checksumAddress]
+                    ? contractMap[checksumAddress].erc20
+                    : true;
+                },
+              )
             : accountTokens[address][chainId];
       });
     });
@@ -1299,8 +1318,9 @@ export default class MetamaskController extends EventEmitter {
     this.preferencesController.setAddresses(newAccounts);
     newAccounts.forEach((address) => {
       if (!oldAccounts.includes(address)) {
-        const label = `${ deviceName[0].toUpperCase() }${ deviceName.slice(1) } ${ parseInt(index, 10) + 1
-          } ${ hdPathDescription || '' }`.trim();
+        const label = `${deviceName[0].toUpperCase()}${deviceName.slice(1)} ${
+          parseInt(index, 10) + 1
+        } ${hdPathDescription || ''}`.trim();
         // Set the account label to OneKey 1 /  Ledger 1, etc
         this.preferencesController.setAccountLabel(address, label);
         // Select the account
@@ -1425,17 +1445,17 @@ export default class MetamaskController extends EventEmitter {
    * @param {Function} cb - A callback function called with a state update on success.
    */
   async importAccountWithStrategy(strategy, args) {
-    log.debug('importAccountWithStrategy', { strategy, args })
+    log.debug('importAccountWithStrategy', { strategy, args });
     const privateKey = await accountImporter.importAccount(strategy, args);
-    log.debug({ privateKey })
+    log.debug({ privateKey });
     const bytes = arrayify(addHexPrefix(privateKey));
-    log.debug({ bytes })
+    log.debug({ bytes });
     const len = bytes.length;
-    log.debug('len=', len, len - 3, (len - 3) / 32, (len - 3) % 32)
+    log.debug('len=', len, len - 3, (len - 3) / 32, (len - 3) % 32);
     let keyring;
     if ((len - 3) / 32 < 1 && (len - 3) % 32 > 0) {
       // Single
-      log.debug('single')
+      log.debug('single');
       const publicKeyBuff = await privateToPublicED(privateKey);
       const publicKey = publicKeyBuff.toString('hex');
       keyring = await this.keyringController.addNewKeyring('Simple Key Pair', [
@@ -1585,7 +1605,9 @@ export default class MetamaskController extends EventEmitter {
   signPersonalMessage(msgParams) {
     log.info('FanbaseController - signPersonalMessage');
     const msgId = msgParams.metamaskId;
-    const signingMessage = new starcoin_types.SigningMessage(arrayify(msgParams.data));
+    const signingMessage = new starcoin_types.SigningMessage(
+      arrayify(msgParams.data),
+    );
     const chainId = parseInt(msgParams.networkId, 10);
     // sets the status op the message to 'approved'
     // and removes the metamaskId for signing
@@ -1593,13 +1615,21 @@ export default class MetamaskController extends EventEmitter {
       .approveMessage(msgParams)
       .then((cleanMsgParams) => {
         // signs the message
-        const rawData = Buffer.from(stripHexPrefix(cleanMsgParams.data), 'hex').toString('utf8')
+        const rawData = Buffer.from(
+          stripHexPrefix(cleanMsgParams.data),
+          'hex',
+        ).toString('utf8');
         cleanMsgParams.rawData = rawData;
         return this.keyringController.signPersonalMessage(cleanMsgParams);
       })
       .then((payload) => {
         const { publicKey, signature } = payload;
-        return utils.signedMessage.generateSignedMessage(signingMessage, chainId, publicKey, signature)
+        return utils.signedMessage.generateSignedMessage(
+          signingMessage,
+          chainId,
+          publicKey,
+          signature,
+        );
       })
       .then((rawSig) => {
         // tells the listener that the message has been signed
@@ -1783,10 +1813,7 @@ export default class MetamaskController extends EventEmitter {
       // and can be returned to the dapp
       this.encryptionPublicKeyManager.setMsgStatusReceived(msgId, publicKey);
     } catch (error) {
-      log.info(
-        'FanbaseController - eth_getEncryptionPublicKey failed.',
-        error,
-      );
+      log.info('FanbaseController - eth_getEncryptionPublicKey failed.', error);
       this.encryptionPublicKeyManager.errorMessage(msgId, error);
     }
     return this.getState();
@@ -1909,7 +1936,10 @@ export default class MetamaskController extends EventEmitter {
 
   async signMultiSignTransaction(txnHex) {
     const metamaskState = await this.getState();
-    await this.txController.signMultiSignTransaction(txnHex, metamaskState.selectedAddress);
+    await this.txController.signMultiSignTransaction(
+      txnHex,
+      metamaskState.selectedAddress,
+    );
     const state = await this.getState();
     return state;
   }
@@ -1920,8 +1950,11 @@ export default class MetamaskController extends EventEmitter {
       // network = 0xfe for `Localhost 9850`
       // network = { name: XXX, id: XXX_NETWORK_ID } for others
       const chainId = network.id ? network.id : Number(hexToDecimal(network));
-      const tokenCode = estimateGasParams.code ? estimateGasParams.code : '0x00000000000000000000000000000001::ETH::ETH'
-      return this.keyringController.getPublicKeyFor(estimateGasParams.from)
+      const tokenCode = estimateGasParams.code
+        ? estimateGasParams.code
+        : '0x00000000000000000000000000000001::ETH::ETH';
+      return this.keyringController
+        .getPublicKeyFor(estimateGasParams.from)
         .then((publicKey) => {
           const params = {
             chain_id: chainId,
@@ -1931,9 +1964,13 @@ export default class MetamaskController extends EventEmitter {
             sequence_number: estimateGasParams.sequenceNumber,
             max_gas_amount: 40000000,
             script: {
-              code: '0x00000000000000000000000000000001::TransferScripts::peer_to_peer_v2',
+              code:
+                '0x00000000000000000000000000000001::TransferScripts::peer_to_peer_v2',
               type_args: [tokenCode],
-              args: [estimateGasParams.to, `${ hexToDecimal(estimateGasParams.gas) }u128`]
+              args: [
+                estimateGasParams.to,
+                `${hexToDecimal(estimateGasParams.gas)}u128`,
+              ],
             },
           };
           if (!estimateGasParams.to) {
@@ -2009,7 +2046,6 @@ export default class MetamaskController extends EventEmitter {
 
     // messages between inpage and background
     this.setupProviderConnection(mux.createStream('starmask-provider'), sender);
-
   }
 
   /**
@@ -2813,7 +2849,7 @@ export default class MetamaskController extends EventEmitter {
   }
 
   /**
-   * Get AutoAcceptToken for selected account. 
+   * Get AutoAcceptToken for selected account.
    * @param {string} address - The account address
    */
   getAutoAcceptToken(adress) {
@@ -2831,8 +2867,8 @@ export default class MetamaskController extends EventEmitter {
           } else {
             const autoAcceptToken = result
               ? result.raw && parseInt(result.raw, 16) > 0
-              // If an account is just created in the wallet, result is null, should return true.
-              : true;
+              : // If an account is just created in the wallet, result is null, should return true.
+                true;
             resolve(autoAcceptToken);
           }
         },
@@ -2850,7 +2886,7 @@ export default class MetamaskController extends EventEmitter {
     return new Promise((resolve, reject) => {
       stcQuery.getResource(
         address,
-        `0x00000000000000000000000000000001::Account::Balance<${ code }>`,
+        `0x00000000000000000000000000000001::Account::Balance<${code}>`,
         (error, res) => {
           if (error) {
             log.error(error);
@@ -2874,7 +2910,7 @@ export default class MetamaskController extends EventEmitter {
     return new Promise((resolve, reject) => {
       stcQuery.getResource(
         address,
-        `0x00000000000000000000000000000001::NFTGallery::NFTGallery<${ meta }, ${ body }>`,
+        `0x00000000000000000000000000000001::NFTGallery::NFTGallery<${meta}, ${body}>`,
         (error, res) => {
           if (error) {
             log.error(error);
