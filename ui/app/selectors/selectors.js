@@ -78,7 +78,7 @@ export function getAccountType(state) {
   const type = currentKeyring && currentKeyring.type;
 
   switch (type) {
-    case 'OneKey Hardware':
+    case 'Trezor Hardware':
     case 'Ledger Hardware':
       return 'hardware';
     case 'Simple Key Pair':
@@ -266,7 +266,7 @@ export function getAccountsWithLabels(state) {
   return getMetaMaskAccountsOrdered(state).map(
     ({ address, name, balance }) => ({
       address,
-      addressLabel: `${ name } (...${ address.slice(address.length - 4) })`,
+      addressLabel: `${name} (...${address.slice(address.length - 4)})`,
       label: name,
       balance,
     }),
@@ -390,7 +390,7 @@ export function getRpcPrefsForCurrentProvider(state) {
   );
   let rpcPrefs;
   if (selectRpcInfo) {
-    rpcPrefs = selectRpcInfo.rpcPrefs || {}
+    rpcPrefs = selectRpcInfo.rpcPrefs || {};
   } else {
     selectRpcInfo = defaultNetworksData.find(
       (rpcInfo) => rpcInfo.providerType === provider.type,
@@ -506,5 +506,5 @@ export function getNFTMetas(state) {
 
 export function getIsOneKey(state) {
   const keyring = getCurrentKeyring(state);
-  return keyring.type === 'OneKey Hardware';
+  return keyring.type === 'Trezor Hardware';
 }

@@ -18,7 +18,7 @@ import {
   privateToPublicED,
   addHexPrefix,
 } from '@starcoin/stc-util';
-import { utils, starcoin_types, encoding } from '@starcoin/starcoin';
+import { utils, starcoin_types } from '@starcoin/starcoin';
 import BigNumber from 'bignumber.js';
 import log from 'loglevel';
 // import OneKeyKeyring from '../../lib/@starcoin/stc-onekey-keyring';
@@ -27,7 +27,7 @@ import log from 'loglevel';
 import TrezorKeyring from '../../lib/keyrings/trezor_keyring';
 import LedgerBridgeKeyring from '@metamask/eth-ledger-bridge-keyring';
 import LatticeKeyring from '../../lib/keyrings/lattice_keyring';
-import { MetaMaskKeyring as QRHardwareKeyring } from '../../lib/keyrings/metamask_keyring';
+import { MetaMaskKeyring as QRHardwareKeyring } from '@keystonehq/metamask-airgapped-keyring';
 
 import StcQuery from '@starcoin/stc-query';
 import nanoid from 'nanoid';
@@ -957,12 +957,13 @@ export default class MetamaskController extends EventEmitter {
         const addresses = await this.keyringController.getAccounts();
         this.preferencesController.setAddresses(addresses);
 
-        const primaryKeyring = this.keyringController.getKeyringsByType(
-          'HD Key Tree',
-        )[0];
-        if (!primaryKeyring) {
-          throw new Error('FanbaseController - No HD Key Tree found');
-        }
+        //Changed: PrimaryKeyring Desabled Here
+        // const primaryKeyring = this.keyringController.getKeyringsByType(
+        //   'HD Key Tree',
+        // )[0];
+        // if (!primaryKeyring) {
+        //   throw new Error('FanbaseController - No HD Key Tree found');
+        // }
 
         this.selectFirstIdentity();
       }
@@ -1219,13 +1220,14 @@ export default class MetamaskController extends EventEmitter {
 
   async getKeyringForDevice(deviceName, hdPath = null) {
     let keyringName = null;
+    //Changed: 'ledger' case activated
     switch (deviceName) {
-      case 'onekey':
-        keyringName = OneKeyKeyring.type;
+      case 'trezor':
+        keyringName = TrezorKeyring.type;
         break;
-      // case 'ledger':
-      //   keyringName = LedgerBridgeKeyring.type;
-      //   break;
+      case 'ledger':
+        keyringName = LedgerBridgeKeyring.type;
+        break;
       default:
         throw new Error(
           'FanbaseController:getKeyringForDevice - Unknown device',
@@ -1436,6 +1438,7 @@ export default class MetamaskController extends EventEmitter {
   }
 
   /**
+   * Address length discovered here
    * Imports an account with the specified import strategy.
    * These are defined in app/scripts/account-import-strategies
    * Each strategy represents a different way of serializing an Ethereum key pair.
@@ -1767,10 +1770,10 @@ export default class MetamaskController extends EventEmitter {
         });
       }
 
-      case 'OneKey Hardware': {
+      case 'Trezor Hardware': {
         return new Promise((_, reject) => {
           reject(
-            new Error('OneKey does not support eth_getEncryptionPublicKey.'),
+            new Error('Trezor does not support eth_getEncryptionPublicKey.'),
           );
         });
       }

@@ -1,0 +1,75 @@
+{
+  "_from": "@keystonehq/metamask-airgapped-keyring",
+  "_id": "@keystonehq/metamask-airgapped-keyring@0.6.1-alpha.0",
+  "_inBundle": false,
+  "_integrity": "sha512-QUN5lOj6Sx9C5Hbc1wcPFPN3ehvFw8fm+2X7CCvuCBGxyCEQ5H1ddSU6GS3DAKafL5kUzX71c6YSmOgBLWVNOA==",
+  "_location": "/@keystonehq/metamask-airgapped-keyring",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "@keystonehq/metamask-airgapped-keyring",
+    "name": "@keystonehq/metamask-airgapped-keyring",
+    "escapedName": "@keystonehq%2fmetamask-airgapped-keyring",
+    "scope": "@keystonehq",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@keystonehq/metamask-airgapped-keyring/-/metamask-airgapped-keyring-0.6.1-alpha.0.tgz",
+  "_shasum": "acea83888c9f8ef0993957edb03c143a83f9eed6",
+  "_spec": "@keystonehq/metamask-airgapped-keyring",
+  "_where": "/home/rootman/starmask/npm",
+  "author": {
+    "name": "aaronisme",
+    "email": "aarondongchen@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/KeystoneHQ/keystone-airgaped-base/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@ethereumjs/tx": "^3.3.0",
+    "@keystonehq/base-eth-keyring": "^0.7.1-alpha.0",
+    "@keystonehq/bc-ur-registry-eth": "^0.12.1-alpha.0",
+    "@metamask/obs-store": "^7.0.0",
+    "rlp": "^2.2.6",
+    "uuid": "^8.3.2"
+  },
+  "deprecated": false,
+  "description": "airgapped eth keyring for metamask",
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.15.0",
+    "tsdx": "^0.14.1",
+    "typescript": "^4.6.2"
+  },
+  "directories": {
+    "lib": "dist"
+  },
+  "files": [
+    "dist"
+  ],
+  "gitHead": "3874845672c0ff7ec6aaf00878aea629ed18e7f5",
+  "homepage": "https://github.com/KeystoneHQ/keystone-airgaped-base#readme",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "name": "@keystonehq/metamask-airgapped-keyring",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KeystoneHQ/keystone-airgaped-base.git"
+  },
+  "scripts": {
+    "build": "tsdx build",
+    "clean": "rm -rf ./dist",
+    "start": "tsdx watch"
+  },
+  "types": "dist/index.d.ts",
+  "version": "0.6.1-alpha.0"
+}

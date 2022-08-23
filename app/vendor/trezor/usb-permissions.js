@@ -29,7 +29,7 @@ const switchToPopupTab = (event) => {
     // triggered from 'beforeunload' event
     // find tab by popup pattern and switch to it
     chrome.tabs.query({
-        url: "*://connect.onekey.so/popup.html"
+        url: "*://connect.trezor.io/5/extension-permissions.html"
     }, (tabs) => {
         if (tabs.length < 0) return;
         chrome.tabs.update(tabs[0].id, { active: true });

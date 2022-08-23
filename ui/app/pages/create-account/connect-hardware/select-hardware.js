@@ -28,9 +28,9 @@ export default class SelectHardware extends Component {
     return (
       <button
         className={classnames('hw-connect__btn', {
-          selected: this.state.selectedDevice === 'onekey',
+          selected: this.state.selectedDevice === 'trezor',
         })}
-        onClick={(_) => this.setState({ selectedDevice: 'onekey' })}
+        onClick={(_) => this.setState({ selectedDevice: 'trezor' })}
       >
         <img
           className="hw-connect__btn__img"
@@ -101,11 +101,11 @@ export default class SelectHardware extends Component {
 
   getAffiliateLinks() {
     const links = {
-      onekey: `<a class='hw-connect__get-hw__link' href='https://onekey.so' target='_blank'>OneKey</a>`,
+      onekey: `<a class='hw-connect__get-hw__link' href='https://trezor.io' target='_blank'>Trezor</a>`,
     };
 
     const text = this.context.t('orderOneHere');
-    const response = text.replace('OneKey', links.onekey);
+    const response = text.replace('Trezor', links.onekey);
 
     return (
       <div

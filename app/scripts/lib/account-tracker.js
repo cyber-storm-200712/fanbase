@@ -186,7 +186,9 @@ export default class AccountTracker {
   async _updateForBlock(blockNumber) {
     this._currentBlockNumber = parseInt(blockNumber, 10);
     // block gasLimit polling shouldn't be in account-tracker shouldn't be here...
-    const currentBlock = await this._query.getBlockByNumber(this._currentBlockNumber);
+    const currentBlock = await this._query.getBlockByNumber(
+      this._currentBlockNumber,
+    );
     if (!currentBlock) {
       return;
     }
@@ -260,110 +262,113 @@ export default class AccountTracker {
     const currentTokens = {};
     const currentNFTGallery = [];
     const currentNFTIdentifier = [];
-    let balanceDecimal = 0;
+    let balanceDecimal;
     // do not update HD Key account
-    if (address.length !== 42) {
-      try {
-        // query balance
-        const res = await this._query.listResource(address, { decode: true });
-        const { resources } = res;
-        const ACCOUNT_BALANCE = '0x00000000000000000000000000000001::Account::Balance';
-        const balanceKeys = [];
-        const NFT_GALLERY = '0x00000000000000000000000000000001::NFTGallery::NFTGallery';
-        const nftKeys = [];
-        const NFT_IDENTIFIER = '0x00000000000000000000000000000001::IdentifierNFT::IdentifierNFT';
-        const identifierNFTKeys = [];
-        Object.keys(resources).forEach((key) => {
-          if (key.startsWith(ACCOUNT_BALANCE)) {
-            const token = key.substr(
-              ACCOUNT_BALANCE.length + 1,
-              key.length - ACCOUNT_BALANCE.length - 2,
-            );
-            balanceKeys.push(key);
-          } else if (key.startsWith(NFT_GALLERY)) {
-            nftKeys.push(key);
-          } else if (key.startsWith(NFT_IDENTIFIER)) {
-            identifierNFTKeys.push(key);
+    // if (address.length !== 42) {
+    try {
+      // query balance
+      const res = await this._query.listResource(address, { decode: true });
+      const { resources } = res;
+      const ACCOUNT_BALANCE =
+        '0x00000000000000000000000000000001::Account::Balance';
+      const balanceKeys = [];
+      const NFT_GALLERY =
+        '0x00000000000000000000000000000001::NFTGallery::NFTGallery';
+      const nftKeys = [];
+      const NFT_IDENTIFIER =
+        '0x00000000000000000000000000000001::IdentifierNFT::IdentifierNFT';
+      const identifierNFTKeys = [];
+      Object.keys(resources).forEach((key) => {
+        if (key.startsWith(ACCOUNT_BALANCE)) {
+          const token = key.substr(
+            ACCOUNT_BALANCE.length + 1,
+            key.length - ACCOUNT_BALANCE.length - 2,
+          );
+          balanceKeys.push(key);
+        } else if (key.startsWith(NFT_GALLERY)) {
+          nftKeys.push(key);
+        } else if (key.startsWith(NFT_IDENTIFIER)) {
+          identifierNFTKeys.push(key);
+        }
+      });
+      if (balanceKeys.length === 0) {
+        accounts[address] = { address, balance: '0x0' };
+      } else {
+        balanceKeys.forEach((key) => {
+          balanceDecimal = resources[key].json.token.value;
+          const token = key.substr(
+            ACCOUNT_BALANCE.length + 1,
+            key.length - ACCOUNT_BALANCE.length - 2,
+          );
+          const balanceHex = new BigNumber(balanceDecimal, 10).toString(16);
+          const balance = addHexPrefix(balanceHex);
+          if (token === '0x00000000000000000000000000000001::ETH::ETH') {
+            const result = { address, balance };
+            accounts[address] = result;
+          } else {
+            currentTokens[token] = balance;
           }
         });
-        if (balanceKeys.length === 0) {
-          accounts[address] = { address, balance: '0x0' };
-        } else {
-          balanceKeys.forEach((key) => {
-            balanceDecimal = resources[key].json.token.value;
-            const token = key.substr(
-              ACCOUNT_BALANCE.length + 1,
-              key.length - ACCOUNT_BALANCE.length - 2,
-            );
-            const balanceHex = new BigNumber(balanceDecimal, 10).toString(16);
-            const balance = addHexPrefix(balanceHex);
-            if (token === '0x00000000000000000000000000000001::ETH::ETH') {
-              const result = { address, balance };
-              accounts[address] = result;
-            } else {
-              currentTokens[token] = balance;
-            }
-          });
-        }
-        assets[address] = currentTokens;
-        nftKeys.forEach((key) => {
-          const T2 = key.substr(
-            NFT_GALLERY.length + 1,
-            key.length - NFT_GALLERY.length - 2,
-          );
-          const T2Arr = T2.split(',');
-          const meta = T2Arr[0].trim();
-          const body = T2Arr[1].trim();
-          const items = resources[key].json.items.map((item) => {
-            return {
-              id: item.id,
-              name: decodeNFTMeta(item.base_meta.name),
-              description: decodeNFTMeta(item.base_meta.description),
-              image: decodeNFTMeta(item.base_meta.image),
-              imageData: decodeNFTMeta(item.base_meta.image_data),
-            };
-          });
-          currentNFTGallery.push({
-            meta,
-            body,
-            items,
-          });
-        });
-        nfts[address] = currentNFTGallery;
-
-        identifierNFTKeys.forEach((key) => {
-          const T2 = key.substr(
-            NFT_IDENTIFIER.length + 1,
-            key.length - NFT_IDENTIFIER.length - 2,
-          );
-          const T2Arr = T2.split(',');
-          const meta = T2Arr[0].trim();
-          const body = T2Arr[1].trim();
-          const items = resources[key].json.nft.vec.map((item) => {
-            return {
-              id: item.id,
-              name: decodeNFTMeta(item.base_meta.name),
-              description: decodeNFTMeta(item.base_meta.description),
-              image: decodeNFTMeta(item.base_meta.image),
-              imageData: decodeNFTMeta(item.base_meta.image_data),
-            };
-          });
-          currentNFTIdentifier.push({
-            meta,
-            body,
-            items,
-          });
-        });
-        nftIdentifier[address] = currentNFTIdentifier;
-      } catch (error) {
-        log.info('_updateAccount error', error);
-        // HD account will get error: Invalid params: unable to parse AccoutAddress
-        accounts[address] = { address, balance: '0x0' };
-        assets[address] = currentTokens;
-        nfts[address] = [];
-        nftIdentifier[address] = [];
       }
+      assets[address] = currentTokens;
+      nftKeys.forEach((key) => {
+        const T2 = key.substr(
+          NFT_GALLERY.length + 1,
+          key.length - NFT_GALLERY.length - 2,
+        );
+        const T2Arr = T2.split(',');
+        const meta = T2Arr[0].trim();
+        const body = T2Arr[1].trim();
+        const items = resources[key].json.items.map((item) => {
+          return {
+            id: item.id,
+            name: decodeNFTMeta(item.base_meta.name),
+            description: decodeNFTMeta(item.base_meta.description),
+            image: decodeNFTMeta(item.base_meta.image),
+            imageData: decodeNFTMeta(item.base_meta.image_data),
+          };
+        });
+        currentNFTGallery.push({
+          meta,
+          body,
+          items,
+        });
+      });
+      nfts[address] = currentNFTGallery;
+
+      identifierNFTKeys.forEach((key) => {
+        const T2 = key.substr(
+          NFT_IDENTIFIER.length + 1,
+          key.length - NFT_IDENTIFIER.length - 2,
+        );
+        const T2Arr = T2.split(',');
+        const meta = T2Arr[0].trim();
+        const body = T2Arr[1].trim();
+        const items = resources[key].json.nft.vec.map((item) => {
+          return {
+            id: item.id,
+            name: decodeNFTMeta(item.base_meta.name),
+            description: decodeNFTMeta(item.base_meta.description),
+            image: decodeNFTMeta(item.base_meta.image),
+            imageData: decodeNFTMeta(item.base_meta.image_data),
+          };
+        });
+        currentNFTIdentifier.push({
+          meta,
+          body,
+          items,
+        });
+      });
+      nftIdentifier[address] = currentNFTIdentifier;
+    } catch (error) {
+      log.info('_updateAccount error', error);
+      // HD account will get error: Invalid params: unable to parse AccoutAddress
+      accounts[address] = { address, balance: '0x0' };
+      assets[address] = currentTokens;
+      nfts[address] = [];
+      nftIdentifier[address] = [];
     }
+    // }
     // update accounts state
 
     // only populate if the entry is still present

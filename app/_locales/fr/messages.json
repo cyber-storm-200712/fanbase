@@ -1,4 +1,10 @@
 {
+  "AutoAcceptToken": {
+    "message": "Accepter automatiquement les Tokens"
+  },
+  "AutoAcceptTokenDescription": {
+    "message": "Sélectionnez cette option pour accepter automatiquement les nouveaux Tokens, sinon vous devrez d'abord ajouter et accepter manuellement le nouveau Token."
+  },
   "about": {
     "message": "A propos"
   },
@@ -75,11 +81,11 @@
   "addEthereumChainConfirmationTitle": {
     "message": "Autoriser ce site à ajouter un réseau?"
   },
-  "addNetwork": {
-    "message": "Ajouter un réseau"
-  },
   "addNFTGallery": {
     "message": "Ajouter une galerie NFT"
+  },
+  "addNetwork": {
+    "message": "Ajouter un réseau"
   },
   "addRecipient": {
     "message": "Ajouter un destinataire"
@@ -206,12 +212,6 @@
   },
   "authorizedPermissions": {
     "message": "Vous avez accepté les autorisations suivantes"
-  },
-  "AutoAcceptToken": {
-    "message": "Accepter automatiquement les Tokens"
-  },
-  "AutoAcceptTokenDescription": {
-    "message": "Sélectionnez cette option pour accepter automatiquement les nouveaux Tokens, sinon vous devrez d'abord ajouter et accepter manuellement le nouveau Token."
   },
   "autoLockTimeLimit": {
     "message": "Verrouillage automatique (minutes)"
@@ -602,14 +602,14 @@
   "downloadGoogleChrome": {
     "message": "Télécharger Google Chrome"
   },
+  "downloadMulitSignTransactionBinaryFile": {
+    "message": "Download MulitSig Transaction Binary File"
+  },
   "downloadSecretBackup": {
     "message": "Téléchargez cette phrase de sauvegarde secrète et conservez-la en toute sécurité sur un disque dur externe crypté ou un support de stockage."
   },
   "downloadStateLogs": {
     "message": "Télécharger les journaux d'état"
-  },
-  "downloadMulitSignTransactionBinaryFile": {
-    "message": "Download MulitSig Transaction Binary File"
   },
   "dropped": {
     "message": "Chuté"
@@ -725,9 +725,6 @@
     "message": "Afficher les adresses de vos comptes autorisés (obligatoire)",
     "description": "La description de l'autorisation `eth_accounts`"
   },
-  "starcoinPublicAddress": {
-    "message": "Adresse publique Starcoin"
-  },
   "etherscan": {
     "message": "Explorateur Starcoins"
   },
@@ -817,11 +814,11 @@
   "gasPriceExcessive": {
     "message": "Vos frais de gaz sont inutilement élevés. Pensez à baisser le montant."
   },
-  "gasPriceExtendMax": {
-    "message": "Votre prix du gaz est d'étendre la valeur maximale : 10000."
-  },
   "gasPriceExcessiveInput": {
     "message": "Le prix du gaz est excessif"
+  },
+  "gasPriceExtendMax": {
+    "message": "Votre prix du gaz est d'étendre la valeur maximale : 10000."
   },
   "gasPriceExtremelyLow": {
     "message": "Prix du gaz extrêmement bas"
@@ -992,11 +989,11 @@
   "invalidIpfsGateway": {
     "message": "Passerelle IPFS non valide : la valeur doit être une URL valide"
   },
-  "invalidNFTMeta": {
-    "message": "Méta NFT non valide."
-  },
   "invalidNFTBody": {
     "message": "Corps NFT non valide."
+  },
+  "invalidNFTMeta": {
+    "message": "Méta NFT non valide."
   },
   "invalidNumber": {
     "message": "Numéro invalide. Saisissez un nombre décimal ou hexadécimal précédé de '0x'."
@@ -1152,23 +1149,23 @@
   "multiSignTxn": {
     "message": "MultiSig Transaction"
   },
-  "multiSignTxnHex": {
-    "message": "Transaction Hex"
-  },
-  "multiSignTxnCreate": {
-    "message": "Create"
-  },
   "multiSignTxnAddSign": {
     "message": "Add Signature"
   },
-  "multiSignTxnCopyHex": {
-    "message": "Copy MultiSig Transaction Hex"
+  "multiSignTxnAmount": {
+    "message": "Signatures Amount"
   },
   "multiSignTxnCopiedHex": {
     "message": "Copied MultiSig Transaction Hex"
   },
-  "multiSignTxnAmount": {
-    "message": "Signatures Amount"
+  "multiSignTxnCopyHex": {
+    "message": "Copy MultiSig Transaction Hex"
+  },
+  "multiSignTxnCreate": {
+    "message": "Create"
+  },
+  "multiSignTxnHex": {
+    "message": "Transaction Hex"
   },
   "multiSignTxnTime": {
     "message": "Time"
@@ -1260,14 +1257,14 @@
     "message": "Le nonce est supérieur au nonce suggéré de $1",
     "description": "Le prochain nonce selon la logique interne de Fanbase"
   },
+  "nftAlreadyAdded": {
+    "message": "NFT déjà ajouté"
+  },
   "nftBody": {
     "message": "Corps NFT"
   },
   "nftDescription": {
     "message": "Description NFT"
-  },
-  "nftMeta": {
-    "message": "Meta NFT"
   },
   "nftGallery": {
     "message": "NFT Gallery"
@@ -1275,11 +1272,11 @@
   "nftIdentifier": {
     "message": "NFT Identifier"
   },
+  "nftMeta": {
+    "message": "Meta NFT"
+  },
   "nftName": {
     "message": "Nom NFT"
-  },
-  "nftAlreadyAdded": {
-    "message": "NFT déjà ajouté"
   },
   "nfts": {
     "message": "NFTs"
@@ -1296,11 +1293,11 @@
   "noConversionRateAvailable": {
     "message": "Aucun taux de conversion disponible"
   },
-  "noNFTIdentifier": {
-    "message": "Vous n'avez pas de NFT Identifier"
-  },
   "noNFTGallery": {
     "message": "Vous n'avez pas de NFT Gallery"
+  },
+  "noNFTIdentifier": {
+    "message": "Vous n'avez pas de NFT Identifier"
   },
   "noThanks": {
     "message": "Non merci"
@@ -1364,7 +1361,7 @@
     "message": "Symbole de la devise (facultatif)"
   },
   "orderOneHere": {
-    "message": "Commandez une OneKey et gardez vos fonds sur un stockage à froid"
+    "message": "Commandez une Trezor et gardez vos fonds sur un stockage à froid"
   },
   "origin": {
     "message": "Origine"
@@ -1456,14 +1453,14 @@
   "readyToConnect": {
     "message": "Prêt à vous connecter ?"
   },
+  "receiptIdentifier": {
+    "message": "ReceiptIdentifier"
+  },
   "receive": {
     "message": "Recevoir"
   },
   "recents": {
     "message": "Récents"
-  },
-  "recipientAddress": {
-    "message": "Adresse du destinataire"
   },
   "recipientAccountNotAcceptToken": {
     "message": "Le destinataire n'accepte pas ce Token et n'a pas activé 'AutoAcceptToken'. Veuillez demander au destinataire d'ajouter et d'accepter ce Token ou d'activer 'AutoAcceptToken' dans la page des paramètres du compte."
@@ -1471,11 +1468,11 @@
   "recipientAccountNotAddNFTGallery": {
     "message": "Le destinataire n'a pas encore ajouté cette galerie NFT. Veuillez d'abord informer le destinataire qu'il doit \"ajouter une galerie NFT\"."
   },
+  "recipientAddress": {
+    "message": "Adresse du destinataire"
+  },
   "recipientAddressPlaceholder": {
     "message": "Adresse de recherche (0x) ou ReceiptIdentifier(stc1p)"
-  },
-  "receiptIdentifier": {
-    "message": "ReceiptIdentifier"
   },
   "reject": {
     "message": "Rejeter"
@@ -1530,7 +1527,7 @@
   },
   "restoreWalletPreferences": {
     "message": "Une sauvegarde de vos données de $1 a été trouvée. Souhaitez-vous restaurer vos préférences de wallet ?",
-     "description": "$1 est la date à laquelle les données ont été sauvegardées"
+    "description": "$1 est la date à laquelle les données ont été sauvegardées"
   },
   "retryTransaction": {
     "message": "Réessayer la transaction"
@@ -1668,11 +1665,11 @@
   "separateEachWord": {
     "message": "Séparez chaque mot par un seul espace"
   },
-  "settings": {
-    "message": "Paramètres"
-  },
   "sequenceNumber": {
     "message": "Numéro de séquence"
+  },
+  "settings": {
+    "message": "Paramètres"
   },
   "showAdvancedGasInline": {
     "message": "Control de gaz avancées"
@@ -1761,6 +1758,9 @@
   },
   "spendLimitTooLarge": {
     "message": "Limite de dépenses trop élevée"
+  },
+  "starcoinPublicAddress": {
+    "message": "Adresse publique Starcoin"
   },
   "stateLogError": {
     "message": "Erreur lors de la récupération des journaux d'état."
@@ -2348,17 +2348,17 @@
   "viewContact": {
     "message": "Voir contacts"
   },
-  "viewReceiptIdengifier": {
-    "message": "Voir ReceiptIdengifier"
-  },
-  "viewPublicKey": {
-    "message": "Voir Clé publique"
-  },
   "viewOnCustomBlockExplorer": {
     "message": "Voir à $1"
   },
   "viewOnStcscan": {
     "message": "Voir sur l'explorateur Starcoin"
+  },
+  "viewPublicKey": {
+    "message": "Voir Clé publique"
+  },
+  "viewReceiptIdengifier": {
+    "message": "Voir ReceiptIdengifier"
   },
   "viewinExplorer": {
     "message": "Voir dans l'explorateur"

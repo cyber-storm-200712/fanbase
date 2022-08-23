@@ -1,0 +1,80 @@
+{
+  "_from": "@keystonehq/base-eth-keyring@^0.7.1-alpha.0",
+  "_id": "@keystonehq/base-eth-keyring@0.7.1-alpha.0",
+  "_inBundle": false,
+  "_integrity": "sha512-ntchEsAKDT+VlpE2BGlXITEomQkKpT4OwRfSg0PyzVXAPEwAQsFh1a39PLGiVoU9lugt2MRTKX1Koior3SG/BQ==",
+  "_location": "/@keystonehq/base-eth-keyring",
+  "_phantomChildren": {
+    "@ethereumjs/common": "2.6.5",
+    "bs58check": "2.1.2",
+    "ethereumjs-util": "7.1.5",
+    "safe-buffer": "5.1.2",
+    "secp256k1": "4.0.3"
+  },
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@keystonehq/base-eth-keyring@^0.7.1-alpha.0",
+    "name": "@keystonehq/base-eth-keyring",
+    "escapedName": "@keystonehq%2fbase-eth-keyring",
+    "scope": "@keystonehq",
+    "rawSpec": "^0.7.1-alpha.0",
+    "saveSpec": null,
+    "fetchSpec": "^0.7.1-alpha.0"
+  },
+  "_requiredBy": [
+    "/@keystonehq/metamask-airgapped-keyring"
+  ],
+  "_resolved": "https://registry.npmjs.org/@keystonehq/base-eth-keyring/-/base-eth-keyring-0.7.1-alpha.0.tgz",
+  "_shasum": "635f6cc4387a4d4b234e48e9c2f318d7b36c49de",
+  "_spec": "@keystonehq/base-eth-keyring@^0.7.1-alpha.0",
+  "_where": "/home/rootman/starmask/npm/node_modules/@keystonehq/metamask-airgapped-keyring",
+  "author": {
+    "name": "aaronisme",
+    "email": "aarondongchen@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/KeystoneHQ/keystone-airgaped-base/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@ethereumjs/tx": "3.5.1",
+    "@keystonehq/bc-ur-registry-eth": "^0.12.1-alpha.0",
+    "ethereumjs-util": "^7.0.8",
+    "hdkey": "^2.0.1",
+    "uuid": "^8.3.2"
+  },
+  "deprecated": false,
+  "description": "base eth keyring",
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.15.0",
+    "@types/uuid": "^8.3.1",
+    "tsdx": "^0.14.1",
+    "typescript": "^4.6.2"
+  },
+  "directories": {
+    "lib": "dist"
+  },
+  "files": [
+    "dist"
+  ],
+  "gitHead": "3874845672c0ff7ec6aaf00878aea629ed18e7f5",
+  "homepage": "https://github.com/KeystoneHQ/keystone-airgaped-base#readme",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "name": "@keystonehq/base-eth-keyring",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KeystoneHQ/keystone-airgaped-base.git"
+  },
+  "scripts": {
+    "build": "tsdx build",
+    "clean": "rm -rf ./dist",
+    "start": "tsdx watch"
+  },
+  "types": "dist/index.d.ts",
+  "version": "0.7.1-alpha.0"
+}

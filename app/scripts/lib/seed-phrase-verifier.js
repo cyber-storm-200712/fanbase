@@ -1,4 +1,5 @@
-import KeyringController from '@starcoin/stc-keyring-controller';
+// import KeyringController from '../../../lib/@starcoin/stc-keyring-controller';
+import KeyringController from 'eth-keyring-controller';
 import log from 'loglevel';
 
 const seedPhraseVerifier = {

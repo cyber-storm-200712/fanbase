@@ -1,4 +1,10 @@
 {
+  "AutoAcceptToken": {
+    "message": "自动接受代币"
+  },
+  "AutoAcceptTokenDescription": {
+    "message": "选中该项可以自动接收代币转账，否则必须先手动添加代币并接受方可接收转账."
+  },
   "about": {
     "message": "关于"
   },
@@ -31,9 +37,6 @@
   "accountName": {
     "message": "账户名称"
   },
-  "accountsNumber": {
-    "message": "子账户数量"
-  },
   "accountNotExists": {
     "message": "账户地址在当前网络上不存在，请提供账户 收款识别码(stc1p)。"
   },
@@ -42,6 +45,9 @@
   },
   "accountSelectionRequired": {
     "message": "您需要选择一个账户 ！"
+  },
+  "accountsNumber": {
+    "message": "子账户数量"
   },
   "active": {
     "message": "当前"
@@ -61,11 +67,11 @@
   "addAlias": {
     "message": "添加别名"
   },
-  "addNetwork": {
-    "message": "添加网络"
-  },
   "addNFTGallery": {
     "message": "添加NFT陈列室"
+  },
+  "addNetwork": {
+    "message": "添加网络"
   },
   "addRecipient": {
     "message": "添加接收方"
@@ -192,12 +198,6 @@
   },
   "authorizedPermissions": {
     "message": "您已授权以下权限"
-  },
-  "AutoAcceptToken": {
-    "message": "自动接受代币"
-  },
-  "AutoAcceptTokenDescription": {
-    "message": "选中该项可以自动接收代币转账，否则必须先手动添加代币并接受方可接收转账."
   },
   "autoLockTimeLimit": {
     "message": "自动锁定定时（分钟）"
@@ -576,14 +576,14 @@
   "downloadGoogleChrome": {
     "message": "下载 Google Chrome 浏览器"
   },
+  "downloadMulitSignTransactionBinaryFile": {
+    "message": "下载多签交易二进制文件"
+  },
   "downloadSecretBackup": {
     "message": "下载账户助记词，并将其安全保存在外部加密硬盘或存储介质上。"
   },
   "downloadStateLogs": {
     "message": "下载状态日志"
-  },
-  "downloadMulitSignTransactionBinaryFile": {
-    "message": "下载多签交易二进制文件"
   },
   "dropped": {
     "message": "丢弃"
@@ -695,15 +695,9 @@
   "estimatedTokenChanges": {
     "message": "预估代币的变化量:"
   },
-  "externalTemp": {
-    "message": "外部临时"
-  },
   "eth_accounts": {
     "message": "查看您允许的账户的地址（必填）",
     "description": "The description for the `eth_accounts` permission"
-  },
-  "starcoinPublicAddress": {
-    "message": "Starcoin 公开地址"
   },
   "etherscan": {
     "message": "Starcoin浏览器"
@@ -714,14 +708,17 @@
   "expandView": {
     "message": "展开视图"
   },
-  "exportTxn": {
-    "message": "导出交易"
-  },
   "exportPrivateKey": {
     "message": "导出私钥"
   },
+  "exportTxn": {
+    "message": "导出交易"
+  },
   "externalExtension": {
     "message": "外部扩展"
+  },
+  "externalTemp": {
+    "message": "外部临时"
   },
   "extraApprovalGas": {
     "message": "+$1 批准燃料",
@@ -797,11 +794,11 @@
   "gasPriceExcessive": {
     "message": "燃料价格过高(不必要), 可以考虑减少燃料限制."
   },
-  "gasPriceExtendMax": {
-    "message": "燃料价格不能超过最大值10000."
-  },
   "gasPriceExcessiveInput": {
     "message": "燃料价格过高"
+  },
+  "gasPriceExtendMax": {
+    "message": "燃料价格不能超过最大值10000."
   },
   "gasPriceExtremelyLow": {
     "message": "燃料价格极低"
@@ -968,11 +965,11 @@
   "invalidIpfsGateway": {
     "message": "无效的 IPFS 网关。该值必须是一个有效的 URL"
   },
-  "invalidNFTMeta": {
-    "message": "无效的 NFT Meta."
-  },
   "invalidNFTBody": {
     "message": "无效的 NFT Body."
+  },
+  "invalidNFTMeta": {
+    "message": "无效的 NFT Meta."
   },
   "invalidNumber": {
     "message": "无效的数字。输入一个数字或‘0x’开头的十六进制数。"
@@ -1035,11 +1032,11 @@
   "loadingTokens": {
     "message": "加载代币中……"
   },
-  "localhost": {
-    "message": "Localhost 8545"
-  },
   "localTemp": {
     "message": "本地临时"
+  },
+  "localhost": {
+    "message": "Localhost 8545"
   },
   "lock": {
     "message": "锁定"
@@ -1123,23 +1120,23 @@
   "multiSignTxn": {
     "message": "多签交易"
   },
-  "multiSignTxnHex": {
-    "message": "多签交易Hex串"
-  },
-  "multiSignTxnCreate": {
-    "message": "创建"
-  },
   "multiSignTxnAddSign": {
     "message": "添加签名"
   },
-  "multiSignTxnCopyHex": {
-    "message": "复制多签交易Hex"
+  "multiSignTxnAmount": {
+    "message": "签名数量"
   },
   "multiSignTxnCopiedHex": {
     "message": "多签交易 Hex 复制成功"
   },
-  "multiSignTxnAmount": {
-    "message": "签名数量"
+  "multiSignTxnCopyHex": {
+    "message": "复制多签交易Hex"
+  },
+  "multiSignTxnCreate": {
+    "message": "创建"
+  },
+  "multiSignTxnHex": {
+    "message": "多签交易Hex串"
   },
   "multiSignTxnTime": {
     "message": "时间"
@@ -1228,14 +1225,14 @@
   "nftDescription": {
     "message": "NFT 描述"
   },
-  "nftMeta": {
-    "message": "NFT Meta"
-  },
   "nftGallery": {
     "message": "NFT陈列室"
   },
   "nftIdentifier": {
     "message": "绑定的NFT"
+  },
+  "nftMeta": {
+    "message": "NFT Meta"
   },
   "nftName": {
     "message": "NFT 名称"
@@ -1255,11 +1252,11 @@
   "noConversionRateAvailable": {
     "message": "无可用转换率"
   },
-  "noNFTIdentifier": {
-    "message": "没有绑定的NFT"
-  },
   "noNFTGallery": {
     "message": "没有NFT陈列室"
+  },
+  "noNFTIdentifier": {
+    "message": "没有绑定的NFT"
   },
   "noThanks": {
     "message": "不，谢谢"
@@ -1326,7 +1323,7 @@
     "message": "符号（选填）"
   },
   "orderOneHere": {
-    "message": "订购 OneKey ，将个人资金进行冷存储"
+    "message": "订购 Trezor ，将个人资金进行冷存储"
   },
   "origin": {
     "message": "来源"
@@ -1421,17 +1418,14 @@
   "readyToConnect": {
     "message": "是否准备连接？"
   },
+  "receiptIdentifier": {
+    "message": "收款识别码"
+  },
   "receive": {
     "message": "接收"
   },
   "recents": {
     "message": "最近记录"
-  },
-  "recipientAddress": {
-    "message": "接收地址"
-  },
-  "recipientAddressPlaceholder": {
-    "message": "查找 账户地址 (0x) 或 收款识别码(stc1p)"
   },
   "recipientAccountNotAcceptToken": {
     "message": "接收方账户没有接收该代币，也没有设置'自动接受代币'。请提醒对方添加并接受该代币,或者在账户设置里面设置'自动接受代币'。"
@@ -1439,8 +1433,11 @@
   "recipientAccountNotAddNFTGallery": {
     "message": "接收方账户没有添加该NFT陈列室。请提醒对方先'添加NFT陈列室'。"
   },
-  "receiptIdentifier": {
-    "message": "收款识别码"
+  "recipientAddress": {
+    "message": "接收地址"
+  },
+  "recipientAddressPlaceholder": {
+    "message": "查找 账户地址 (0x) 或 收款识别码(stc1p)"
   },
   "reject": {
     "message": "拒绝"
@@ -1630,11 +1627,11 @@
   "separateEachWord": {
     "message": "用空格分隔每个单词"
   },
-  "settings": {
-    "message": "设置"
-  },
   "sequenceNumber": {
     "message": "序号"
+  },
+  "settings": {
+    "message": "设置"
   },
   "showAdvancedGasInline": {
     "message": "高级燃料控制"
@@ -1723,6 +1720,9 @@
   },
   "spendLimitTooLarge": {
     "message": "消费限制过大"
+  },
+  "starcoinPublicAddress": {
+    "message": "Starcoin 公开地址"
   },
   "stateLogError": {
     "message": "检索状态日志时出错。"
@@ -2062,11 +2062,11 @@
   "switchNetworks": {
     "message": "切换网络"
   },
-  "switchingNetworksCancelsPendingConfirmations": {
-    "message": "切换网络将取消所有待处理的交易"
-  },
   "switchToThisAccount": {
     "message": "切换到该账户"
+  },
+  "switchingNetworksCancelsPendingConfirmations": {
+    "message": "切换网络将取消所有待处理的交易"
   },
   "symbol": {
     "message": "符号"
@@ -2104,11 +2104,11 @@
   "testFaucet": {
     "message": "测试水管"
   },
-  "threshold": {
-    "message": "阈值"
-  },
   "thisWillCreate": {
     "message": "将为您创建新的钱包账户和账户助记词"
+  },
+  "threshold": {
+    "message": "阈值"
   },
   "tips": {
     "message": "小贴士"
@@ -2274,17 +2274,17 @@
   "viewContact": {
     "message": "查看联系人"
   },
-  "viewReceiptIdengifier": {
-    "message": "查看收款识别码"
-  },
-  "viewPublicKey": {
-    "message": "查看公钥"
-  },
   "viewOnCustomBlockExplorer": {
     "message": "在 $1 查看"
   },
   "viewOnStcscan": {
     "message": "在Starcoin浏览器上查看"
+  },
+  "viewPublicKey": {
+    "message": "查看公钥"
+  },
+  "viewReceiptIdengifier": {
+    "message": "查看收款识别码"
   },
   "viewinExplorer": {
     "message": "在浏览器中查看"

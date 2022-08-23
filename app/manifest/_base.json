@@ -38,11 +38,7 @@
   },
   "content_scripts": [
     {
-      "matches": [
-        "file://*/*",
-        "http://*/*",
-        "https://*/*"
-      ],
+      "matches": ["file://*/*", "http://*/*", "https://*/*"],
       "js": [
         "disable-console.js",
         "globalthis.js",
@@ -54,26 +50,22 @@
       "all_frames": true
     },
     {
-      "matches": [
-        "*://connect.onekey.so/popup.html"
-      ],
-      "js": [
-        "vendor/trezor/content-script.js"
-      ]
+      "matches": ["*://connect.trezor.so/popup.html"],
+      "js": ["vendor/trezor/content-script.js"]
     }
   ],
   "default_locale": "en",
   "description": "__MSG_appDescription__",
   "icons": {
     "16": "images/logo/logo.png",
-      "19": "images/logo/logo.png",
-      "32": "images/logo/logo.png",
-      "38": "images/logo/logo.png",
-      "48": "images/logo/logo.png",
-      "64": "images/logo/logo.png",
-      "128": "images/logo/logo.png",
-      "162": "images/logo/logo.png",
-      "512": "images/logo/logo.png"
+    "19": "images/logo/logo.png",
+    "32": "images/logo/logo.png",
+    "38": "images/logo/logo.png",
+    "48": "images/logo/logo.png",
+    "64": "images/logo/logo.png",
+    "128": "images/logo/logo.png",
+    "162": "images/logo/logo.png",
+    "512": "images/logo/logo.png"
   },
   "manifest_version": 2,
   "name": "__MSG_appName__",
@@ -86,8 +78,5 @@
   ],
   "short_name": "__MSG_appName__",
   "version": "4.7.0",
-  "web_accessible_resources": [
-    "inpage.js",
-    "phishing.html"
-  ]
+  "web_accessible_resources": ["inpage.js", "phishing.html"]
 }

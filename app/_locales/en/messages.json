@@ -1,4 +1,10 @@
 {
+  "AutoAcceptToken": {
+    "message": "Auto Accept Token"
+  },
+  "AutoAcceptTokenDescription": {
+    "message": "Select this to automatically accept the token when receiving a new type of token transfer, otherwise you must manually add and accept the token first."
+  },
   "about": {
     "message": "About"
   },
@@ -31,9 +37,6 @@
   "accountName": {
     "message": "Account Name"
   },
-  "accountsNumber": {
-    "message": "Number"
-  },
   "accountNotExists": {
     "message": "Account Address is not exists on the current network, please provide the Account ReceiptIdentifier."
   },
@@ -42,6 +45,9 @@
   },
   "accountSelectionRequired": {
     "message": "You need to select an account!"
+  },
+  "accountsNumber": {
+    "message": "Number"
   },
   "active": {
     "message": "Active"
@@ -78,11 +84,11 @@
   "addEthereumChainConfirmationTitle": {
     "message": "Allow this site to add a network?"
   },
-  "addNetwork": {
-    "message": "Add Network"
-  },
   "addNFTGallery": {
     "message": "Add NFT Gallery"
+  },
+  "addNetwork": {
+    "message": "Add Network"
   },
   "addRecipient": {
     "message": "Add Recipient"
@@ -213,12 +219,6 @@
   "authorizedPermissions": {
     "message": "You have authorized the following permissions"
   },
-  "AutoAcceptToken": {
-    "message": "Auto Accept Token"
-  },
-  "AutoAcceptTokenDescription": {
-    "message": "Select this to automatically accept the token when receiving a new type of token transfer, otherwise you must manually add and accept the token first."
-  },
   "autoLockTimeLimit": {
     "message": "Auto-Lock Timer (minutes)"
   },
@@ -313,11 +313,11 @@
   "chromeRequiredForHardwareWallets": {
     "message": "You need to use Fanbase on Google Chrome in order to connect to your Hardware Wallet."
   },
-  "clickToRevealSeed": {
-    "message": "Click here to reveal secret words"
-  },
   "clickToDownload": {
     "message": "Click to download binary file"
+  },
+  "clickToRevealSeed": {
+    "message": "Click here to reveal secret words"
   },
   "close": {
     "message": "Close"
@@ -614,14 +614,14 @@
   "downloadGoogleChrome": {
     "message": "Download Google Chrome"
   },
+  "downloadMulitSignTransactionBinaryFile": {
+    "message": "Download MulitSig Transaction Binary File"
+  },
   "downloadSecretBackup": {
     "message": "Download this Secret Backup Phrase and keep it stored safely on an external encrypted hard drive or storage medium."
   },
   "downloadStateLogs": {
     "message": "Download State Logs"
-  },
-  "downloadMulitSignTransactionBinaryFile": {
-    "message": "Download MulitSig Transaction Binary File"
   },
   "dropped": {
     "message": "Dropped"
@@ -733,15 +733,9 @@
   "estimatedTokenChanges": {
     "message": "Estimated Token Changes:"
   },
-  "externalTemp": {
-    "message": "External Temp"
-  },
   "eth_accounts": {
     "message": "View the addresses of your permitted accounts (required)",
     "description": "The description for the `eth_accounts` permission"
-  },
-  "starcoinPublicAddress": {
-    "message": "Starcoin Public Address"
   },
   "etherscan": {
     "message": "Starcoin Explorer"
@@ -752,14 +746,17 @@
   "expandView": {
     "message": "Expand view"
   },
-  "exportTxn": {
-    "message": "Export Transaction"
-  },
   "exportPrivateKey": {
     "message": "Export Private Key"
   },
+  "exportTxn": {
+    "message": "Export Transaction"
+  },
   "externalExtension": {
     "message": "External Extension"
+  },
+  "externalTemp": {
+    "message": "External Temp"
   },
   "extraApprovalGas": {
     "message": "+$1 approval gas",
@@ -835,11 +832,11 @@
   "gasPriceExcessive": {
     "message": "Your gas fee is set unnecessarily high. Consider lowering the amount."
   },
-  "gasPriceExtendMax": {
-    "message": "Your gas price is extend the max value: 10000."
-  },
   "gasPriceExcessiveInput": {
     "message": "Gas Price Is Excessive"
+  },
+  "gasPriceExtendMax": {
+    "message": "Your gas price is extend the max value: 10000."
   },
   "gasPriceExtremelyLow": {
     "message": "Gas Price Extremely Low"
@@ -1010,11 +1007,11 @@
   "invalidIpfsGateway": {
     "message": "Invalid IPFS Gateway: The value must be a valid URL"
   },
-  "invalidNFTMeta": {
-    "message": "Invalid NFT Meta."
-  },
   "invalidNFTBody": {
     "message": "Invalid NFT Body."
+  },
+  "invalidNFTMeta": {
+    "message": "Invalid NFT Meta."
   },
   "invalidNumber": {
     "message": "Invalid number. Enter a decimal or '0x'-prefixed hexadecimal number."
@@ -1077,11 +1074,11 @@
   "loadingTokens": {
     "message": "Loading Tokens..."
   },
-  "localhost": {
-    "message": "Localhost 8545"
-  },
   "localTemp": {
     "message": "Local Temp"
+  },
+  "localhost": {
+    "message": "Localhost 8545"
   },
   "lock": {
     "message": "Lock"
@@ -1173,23 +1170,23 @@
   "multiSignTxn": {
     "message": "MultiSig Transaction"
   },
-  "multiSignTxnHex": {
-    "message": "Transaction Hex"
-  },
-  "multiSignTxnCreate": {
-    "message": "Create"
-  },
   "multiSignTxnAddSign": {
     "message": "Add Signature"
   },
-  "multiSignTxnCopyHex": {
-    "message": "Copy MultiSig Transaction Hex"
+  "multiSignTxnAmount": {
+    "message": "Signatures Amount"
   },
   "multiSignTxnCopiedHex": {
     "message": "Copied MultiSig Transaction Hex"
   },
-  "multiSignTxnAmount": {
-    "message": "Signatures Amount"
+  "multiSignTxnCopyHex": {
+    "message": "Copy MultiSig Transaction Hex"
+  },
+  "multiSignTxnCreate": {
+    "message": "Create"
+  },
+  "multiSignTxnHex": {
+    "message": "Transaction Hex"
   },
   "multiSignTxnTime": {
     "message": "Time"
@@ -1281,14 +1278,14 @@
     "message": "Nonce is higher than suggested nonce of $1",
     "description": "The next nonce according to Fanbase's internal logic"
   },
+  "nftAlreadyAdded": {
+    "message": "NFT Already Added"
+  },
   "nftBody": {
     "message": "NFT Body"
   },
   "nftDescription": {
     "message": "NFT Descriptioin"
-  },
-  "nftMeta": {
-    "message": "NFT Meta"
   },
   "nftGallery": {
     "message": "NFT Gallery"
@@ -1296,11 +1293,11 @@
   "nftIdentifier": {
     "message": "NFT Identifier"
   },
+  "nftMeta": {
+    "message": "NFT Meta"
+  },
   "nftName": {
     "message": "NFT Name"
-  },
-  "nftAlreadyAdded": {
-    "message": "NFT Already Added"
   },
   "nfts": {
     "message": "NFTs"
@@ -1317,11 +1314,11 @@
   "noConversionRateAvailable": {
     "message": "No Conversion Rate Available"
   },
-  "noNFTIdentifier": {
-    "message": "You have no NFT Identifier"
-  },
   "noNFTGallery": {
     "message": "You have no NFT Gallery"
+  },
+  "noNFTIdentifier": {
+    "message": "You have no NFT Identifier"
   },
   "noThanks": {
     "message": "No Thanks"
@@ -1388,7 +1385,7 @@
     "message": "Currency Symbol (optional)"
   },
   "orderOneHere": {
-    "message": "Order a OneKey and keep your funds in cold storage"
+    "message": "Order a Trezor and keep your funds in cold storage"
   },
   "origin": {
     "message": "Origin"
@@ -1483,14 +1480,14 @@
   "readyToConnect": {
     "message": "Ready to Connect?"
   },
+  "receiptIdentifier": {
+    "message": "ReceiptIdentifier"
+  },
   "receive": {
     "message": "Receive"
   },
   "recents": {
     "message": "Recents"
-  },
-  "recipientAddress": {
-    "message": "Recipient Address"
   },
   "recipientAccountNotAcceptToken": {
     "message": "The recipient neither  accept this token, nor has enabled 'AutoAcceptToken'. Please notify the recipient to add and accept this token, or enable 'AutoAcceptToken' in the account settings page."
@@ -1498,11 +1495,11 @@
   "recipientAccountNotAddNFTGallery": {
     "message": "The recipient has not added this NFT gallery yet. Please notify the recipient to 'add NFT gallery' first."
   },
+  "recipientAddress": {
+    "message": "Recipient Address"
+  },
   "recipientAddressPlaceholder": {
     "message": "Search Address (0x) or ReceiptIdentifier(stc1p)"
-  },
-  "receiptIdentifier": {
-    "message": "ReceiptIdentifier"
   },
   "reject": {
     "message": "Reject"
@@ -1695,11 +1692,11 @@
   "separateEachWord": {
     "message": "Separate each word with a single space"
   },
-  "settings": {
-    "message": "Settings"
-  },
   "sequenceNumber": {
     "message": "Sequence Number"
+  },
+  "settings": {
+    "message": "Settings"
   },
   "showAdvancedGasInline": {
     "message": "Advanced gas controls"
@@ -1788,6 +1785,9 @@
   },
   "spendLimitTooLarge": {
     "message": "Spend limit too large"
+  },
+  "starcoinPublicAddress": {
+    "message": "Starcoin Public Address"
   },
   "stateLogError": {
     "message": "Error in retrieving state logs."
@@ -2197,11 +2197,11 @@
   "testFaucet": {
     "message": "Test Faucet"
   },
-  "threshold": {
-    "message": "threshold"
-  },
   "thisWillCreate": {
     "message": "This will create a new wallet and seed phrase"
+  },
+  "threshold": {
+    "message": "threshold"
   },
   "tips": {
     "message": "Tips"
@@ -2378,17 +2378,17 @@
   "viewContact": {
     "message": "View Contact"
   },
-  "viewReceiptIdengifier": {
-    "message": "View ReceiptIdengifier"
-  },
-  "viewPublicKey": {
-    "message": "View PublicKey"
-  },
   "viewOnCustomBlockExplorer": {
     "message": "View at $1"
   },
   "viewOnStcscan": {
     "message": "View on Starcoin Explorer"
+  },
+  "viewPublicKey": {
+    "message": "View PublicKey"
+  },
+  "viewReceiptIdengifier": {
+    "message": "View ReceiptIdengifier"
   },
   "viewinExplorer": {
     "message": "View in Explorer"
