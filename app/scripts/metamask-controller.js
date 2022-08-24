@@ -22,9 +22,6 @@ import {
 import { utils, starcoin_types } from '@starcoin/starcoin';
 import BigNumber from 'bignumber.js';
 import log from 'loglevel';
-// import OneKeyKeyring from '../../lib/@starcoin/stc-onekey-keyring';
-// import MutiSignKeyring from '@starcoin/stc-multisign-keyring';
-// import LedgerBridgeKeyring from '@metamask/eth-ledger-bridge-keyring';
 import TrezorKeyring from '../../lib/keyrings/trezor_keyring';
 import LedgerBridgeKeyring from '@metamask/eth-ledger-bridge-keyring';
 import LatticeKeyring from '../../lib/keyrings/lattice_keyring';
