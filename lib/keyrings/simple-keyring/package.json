@@ -1,0 +1,72 @@
+{
+  "_from": "eth-simple-keyring",
+  "_id": "eth-simple-keyring@4.2.0",
+  "_inBundle": false,
+  "_integrity": "sha512-lBxFObXJTBjktDkQszXrqoB317wghEUYATQ3W19vLAjaznrmbdy1lccPhXIRMT9bHIUgNKOJQkLohNZiT9tO8Q==",
+  "_location": "/eth-simple-keyring",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "eth-simple-keyring",
+    "name": "eth-simple-keyring",
+    "escapedName": "eth-simple-keyring",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/eth-simple-keyring/-/eth-simple-keyring-4.2.0.tgz",
+  "_shasum": "c197a4bd4cce7d701b5f3607d0b843112ddb17e3",
+  "_spec": "eth-simple-keyring",
+  "_where": "/home/rootman/starmask/npm",
+  "author": {
+    "name": "Dan Finlay"
+  },
+  "bugs": {
+    "url": "https://github.com/MetaMask/eth-simple-keyring/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "eth-sig-util": "^3.0.1",
+    "ethereumjs-util": "^7.0.9",
+    "ethereumjs-wallet": "^1.0.1",
+    "events": "^1.1.1"
+  },
+  "deprecated": false,
+  "description": "A simple standard interface for a series of Ethereum private keys.",
+  "devDependencies": {
+    "@ethereumjs/tx": "^3.1.1",
+    "@metamask/eslint-config": "^3.2.0",
+    "chai": "^4.1.2",
+    "eslint": "^7.2.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-json": "^2.1.1",
+    "ethereumjs-tx": "^2.1.0",
+    "mocha": "^8.1.1"
+  },
+  "files": [
+    "index.js"
+  ],
+  "homepage": "https://github.com/MetaMask/eth-simple-keyring#readme",
+  "keywords": [
+    "ethereum",
+    "keyring"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "eth-simple-keyring",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/MetaMask/eth-simple-keyring.git"
+  },
+  "scripts": {
+    "lint": "eslint . --ext js,json",
+    "lint:fix": "eslint . --ext js,json --fix",
+    "test": "mocha"
+  },
+  "version": "4.2.0"
+}

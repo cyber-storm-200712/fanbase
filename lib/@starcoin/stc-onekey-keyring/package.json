@@ -1,0 +1,56 @@
+{
+  "name": "@starcoin/stc-onekey-keyring",
+  "version": "1.2.0",
+  "description": "A Fanbase compatible keyring, for onekey hardware wallets",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "scripts": {
+    "test": "mocha",
+    "lint": "eslint . --ext .js",
+    "lint:fix": "eslint --fix . --ext .js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/starcoinorg/stc-onekey-keyring.git"
+  },
+  "keywords": [
+    "starcoin",
+    "keyring",
+    "starmask",
+    "onekey"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/starcoinorg/stc-onekey-keyring/issues"
+  },
+  "homepage": "https://github.com/starcoinorg/stc-onekey-keyring#readme",
+  "resolutions": {
+    "mocha/mkdirp": "^0.5.1"
+  },
+  "dependencies": {
+    "@onekeyfe/js-sdk": "^1.1.6",
+    "@starcoin/starcoin": "^1.6.2",
+    "@starcoin/stc-hdkey": "^0.2.0",
+    "@starcoin/stc-util": "^0.3.0",
+    "eth-sig-util": "^1.4.2",
+    "ethereumjs-tx": "^1.3.4",
+    "loglevel": "^1.7.1"
+  },
+  "devDependencies": {
+    "@metamask/eslint-config": "^3.0.0",
+    "babel-eslint": "^10.1.0",
+    "chai": "^4.1.2",
+    "chai-spies": "^1.0.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-json": "^1.2.0",
+    "eslint-plugin-mocha": "^6.2.2",
+    "mocha": "^5.0.4",
+    "sinon": "^9.2.3"
+  }
+}

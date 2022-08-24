@@ -1,0 +1,10 @@
+.idea
+
+node_modules
+
+ui/app/css/output/*
+
+
+yarn-error.log
+.giignore.swap
+.DS_Store

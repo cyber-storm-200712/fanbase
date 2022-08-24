@@ -1,0 +1,14 @@
+.multi-sign-txn {
+  &__title {
+    @include H2;
+
+    font-size: 2rem;
+    font-weight: 500;
+    margin-left: 29px;
+    padding: 0 5px;
+  }
+
+  &__header-close {
+    top: 0px;
+  }
+}

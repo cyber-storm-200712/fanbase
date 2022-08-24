@@ -1,0 +1,75 @@
+{
+  "_from": "@keystonehq/bc-ur-registry-eth",
+  "_id": "@keystonehq/bc-ur-registry-eth@0.12.1-alpha.0",
+  "_inBundle": false,
+  "_integrity": "sha512-U/6120Svg/RCH3bZ6zD3z6KRAxD8SYG6msBi8Kb8jzXs9lWrvtNCFeISzWP3gxbIDhvulbQ/HICnMqAX5DOkoQ==",
+  "_location": "/@keystonehq/bc-ur-registry-eth",
+  "_phantomChildren": {
+    "bs58check": "2.1.2",
+    "safe-buffer": "5.1.2",
+    "secp256k1": "4.0.3"
+  },
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "@keystonehq/bc-ur-registry-eth",
+    "name": "@keystonehq/bc-ur-registry-eth",
+    "escapedName": "@keystonehq%2fbc-ur-registry-eth",
+    "scope": "@keystonehq",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/",
+    "/@keystonehq/base-eth-keyring",
+    "/@keystonehq/metamask-airgapped-keyring"
+  ],
+  "_resolved": "https://registry.npmjs.org/@keystonehq/bc-ur-registry-eth/-/bc-ur-registry-eth-0.12.1-alpha.0.tgz",
+  "_shasum": "860f849fa1ba498d4fab147cf7d35375721a525a",
+  "_spec": "@keystonehq/bc-ur-registry-eth",
+  "_where": "/home/rootman/snap/npm",
+  "author": {
+    "name": "soralit",
+    "email": "soralitria@gmail.com"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@keystonehq/bc-ur-registry": "^0.5.0-alpha.5",
+    "ethereumjs-util": "^7.0.8",
+    "hdkey": "^2.0.1",
+    "uuid": "^8.3.2"
+  },
+  "deprecated": false,
+  "description": "bc-ur-registry extension for ETH",
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.15.0",
+    "@types/uuid": "^8.3.1",
+    "tsdx": "^0.14.1",
+    "typescript": "^4.6.2"
+  },
+  "directories": {
+    "lib": "src",
+    "test": "__tests__"
+  },
+  "files": [
+    "src",
+    "dist"
+  ],
+  "gitHead": "3874845672c0ff7ec6aaf00878aea629ed18e7f5",
+  "license": "ISC",
+  "main": "dist/index.js",
+  "name": "@keystonehq/bc-ur-registry-eth",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsdx build",
+    "clean": "rm -rf ./dist",
+    "start": "tsdx watch",
+    "test": "jest --passWithNoTests"
+  },
+  "types": "dist/index.d.ts",
+  "version": "0.12.1-alpha.0"
+}

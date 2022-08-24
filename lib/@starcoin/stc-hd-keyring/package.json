@@ -1,0 +1,47 @@
+{
+  "name": "@starcoin/stc-hd-keyring",
+  "version": "1.5.3",
+  "description": "A simple standard interface for a seed phrase generated set of Starcoin accounts.",
+  "engines": {
+    "node": ">= 10"
+  },
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint . --ext .js",
+    "lint:fix": "eslint --fix . --ext .js",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/starcoinorg/stc-hd-keyring.git"
+  },
+  "keywords": [
+    "starcoin",
+    "keyring"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/starcoinorg/stc-hd-keyring/issues"
+  },
+  "homepage": "https://github.com/starcoinorg/stc-hd-keyring#readme",
+  "dependencies": {
+    "@ethersproject/bytes": "^5.0.6",
+    "@starcoin/starcoin": "^1.6.2",
+    "@starcoin/stc-simple-keyring": "^1.5.3",
+    "@starcoin/stc-util": "^0.3.0",
+    "@starcoin/stc-wallet": "^1.2.2",
+    "bip39": "^2.2.0",
+    "eth-sig-util": "^3.0.1",
+    "ethereumjs-util": "^7.0.9",
+    "loglevel": "^1.7.1"
+  },
+  "devDependencies": {
+    "@metamask/eslint-config": "^4.0.0",
+    "eslint": "^7.7.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-mocha": "^8.0.0",
+    "eslint-plugin-node": "^11.1.0",
+    "mocha": "^8.1.3"
+  }
+}

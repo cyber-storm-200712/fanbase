@@ -1,0 +1,54 @@
+{
+  "name": "@starcoin/stc-keyring-controller",
+  "version": "1.6.0",
+  "description": "A module for managing various keyrings of Starcoin accounts, encrypting them, and using them.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --timeout 10000 --require test/helper.js test/index.js",
+    "lint": "eslint . --ext js,json",
+    "lint:fix": "eslint . --ext js,json --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/starcoinorg/stc-keyring-controller.git"
+  },
+  "keywords": [
+    "starcoin",
+    "starmask",
+    "accounts",
+    "keys"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/starcoinorg/stc-keyring-controller/issues"
+  },
+  "homepage": "https://github.com/starcoinorg/stc-keyring-controller#readme",
+  "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@metamask/eslint-config": "^3.2.0",
+    "clone": "^2.1.1",
+    "eslint": "^6.8.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-json": "^2.1.1",
+    "eslint-plugin-mocha": "^6.0.0",
+    "jsdom": "^11.12.0",
+    "jsdom-global": "^3.0.2",
+    "mocha": "^7.1.2",
+    "polyfill-crypto.getrandomvalues": "^1.0.0",
+    "sinon": "^7.2.7"
+  },
+  "dependencies": {
+    "@starcoin/stc-hd-keyring": "^1.5.3",
+    "@starcoin/stc-simple-keyring": "^1.5.3",
+    "@starcoin/stc-util": "^0.3.0",
+    "bip39": "^2.4.0",
+    "bluebird": "^3.5.0",
+    "browser-passworder": "^2.0.3",
+    "eth-sig-util": "^1.4.0",
+    "loglevel": "^1.5.0",
+    "obs-store": "^4.0.3"
+  },
+  "files": [
+    "index.js"
+  ]
+}

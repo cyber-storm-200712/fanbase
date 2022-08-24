@@ -1,0 +1,75 @@
+{
+  "_from": "trezor-connect@8.2.6-extended",
+  "_id": "trezor-connect@8.2.6-extended",
+  "_inBundle": false,
+  "_integrity": "sha512-j6I975BhHM2JBDDeW7uAjkVJjkUVxv/YhXdVIRN0O70ZyfWeXlY1ZcsYmgUAp08bo8nabFA4UpFADslDHtL3lQ==",
+  "_location": "/eth-trezor-keyring/trezor-connect",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "trezor-connect@8.2.6-extended",
+    "name": "trezor-connect",
+    "escapedName": "trezor-connect",
+    "rawSpec": "8.2.6-extended",
+    "saveSpec": null,
+    "fetchSpec": "8.2.6-extended"
+  },
+  "_requiredBy": [
+    "/eth-trezor-keyring"
+  ],
+  "_resolved": "https://registry.npmjs.org/trezor-connect/-/trezor-connect-8.2.6-extended.tgz",
+  "_shasum": "1f6af2b7d9a8677adcac7b5961ab48f59648f3cc",
+  "_spec": "trezor-connect@8.2.6-extended",
+  "_where": "/home/rootman/starmask/npm/node_modules/eth-trezor-keyring",
+  "author": {
+    "name": "Trezor",
+    "email": "info@trezor.io"
+  },
+  "browser": {
+    "./lib/env/node": "./lib/env/browser",
+    "./lib/env/node/workers": "./lib/env/browser/workers",
+    "./lib/env/node/networkUtils": "./lib/env/browser/networkUtils"
+  },
+  "bugs": {
+    "url": "https://github.com/trezor/connect/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@babel/runtime": "^7.15.4",
+    "@trezor/blockchain-link": "1.1.0",
+    "@trezor/connect-common": "0.0.4",
+    "@trezor/rollout": "^1.2.1",
+    "@trezor/transport": "1.0.1",
+    "@trezor/utxo-lib": "1.0.0-beta.10",
+    "bignumber.js": "^9.0.1",
+    "bowser": "^2.11.0",
+    "cbor-web": "^7.0.6",
+    "cross-fetch": "^3.1.4",
+    "events": "^3.3.0",
+    "parse-uri": "^1.0.3",
+    "tiny-worker": "^2.3.0"
+  },
+  "deprecated": false,
+  "description": "High-level javascript interface for Trezor hardware wallet.",
+  "homepage": "https://github.com/trezor/connect",
+  "keywords": [
+    "Trezor",
+    "trezor-connect",
+    "javascript"
+  ],
+  "license": "SEE LICENSE IN LICENSE.md",
+  "main": "lib/index.js",
+  "name": "trezor-connect",
+  "react-native": {
+    "./lib/env/node": "./lib/env/react-native",
+    "./lib/env/node/workers": "./lib/env/react-native/workers",
+    "./lib/env/node/networkUtils": "./lib/env/react-native/networkUtils"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/trezor/connect.git"
+  },
+  "types": "lib/typescript/index.d.ts",
+  "version": "8.2.6-extended"
+}

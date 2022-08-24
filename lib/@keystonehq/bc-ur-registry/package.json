@@ -1,0 +1,107 @@
+{
+  "_from": "@keystonehq/bc-ur-registry@^0.5.0-alpha.5",
+  "_id": "@keystonehq/bc-ur-registry@0.5.0",
+  "_inBundle": false,
+  "_integrity": "sha512-Y7Ho9ZCP3rWvQpAAHbJ3tPloYov3wRzfzxuY5tfEGltLX7YmSt4LiJtiSkrgWSc/qITZQL95lSM9p1lIb/XHhQ==",
+  "_location": "/@keystonehq/bc-ur-registry",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@keystonehq/bc-ur-registry@^0.5.0-alpha.5",
+    "name": "@keystonehq/bc-ur-registry",
+    "escapedName": "@keystonehq%2fbc-ur-registry",
+    "scope": "@keystonehq",
+    "rawSpec": "^0.5.0-alpha.5",
+    "saveSpec": null,
+    "fetchSpec": "^0.5.0-alpha.5"
+  },
+  "_requiredBy": [
+    "/@keystonehq/bc-ur-registry-eth"
+  ],
+  "_resolved": "https://registry.npmjs.org/@keystonehq/bc-ur-registry/-/bc-ur-registry-0.5.0.tgz",
+  "_shasum": "758948c515951607a6c8147766b8de32c4a29758",
+  "_spec": "@keystonehq/bc-ur-registry@^0.5.0-alpha.5",
+  "_where": "/home/rootman/starmask/npm/node_modules/@keystonehq/bc-ur-registry-eth",
+  "author": {
+    "name": "Soralit",
+    "email": "soralitria@gmail.com"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-typescript"
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/KeystoneHQ/ur-registry/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@ngraveio/bc-ur": "^1.1.5",
+    "base58check": "^2.0.0",
+    "tslib": "^2.3.0"
+  },
+  "deprecated": false,
+  "description": "A JS implementation of Uniform Resources(UR) Registry specification from Blockchain Commons",
+  "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-typescript": "^7.6.0",
+    "@types/bip39": "^3.0.0",
+    "@types/bs58check": "^2.1.0",
+    "@types/jest": "~26.0.23",
+    "@types/node": "~14.14.44",
+    "@types/uuid": "^8.3.1",
+    "@typescript-eslint/eslint-plugin": "~4.33.0",
+    "@typescript-eslint/parser": "~4.33.0",
+    "babel-loader": "^8.2.2",
+    "bip32": "^2.0.6",
+    "bip39": "^3.0.4",
+    "bitcoinjs-lib": "^5.2.0",
+    "eslint": "~7.26.0",
+    "eslint-config-prettier": "~8.3.0",
+    "eslint-plugin-jest": "~24.3.6",
+    "jest": "~26.6.3",
+    "node-polyfill-webpack-plugin": "^1.1.2",
+    "prettier": "~2.3.0",
+    "rimraf": "~3.0.2",
+    "ts-jest": "~26.5.6",
+    "tsutils": "~3.21.0",
+    "typescript": "^4.5.4",
+    "uuid": "^8.3.2",
+    "webpack": "4.46.0",
+    "webpack-cli": "4.3.1"
+  },
+  "directories": {
+    "lib": "src",
+    "test": "__tests__"
+  },
+  "files": [
+    "src",
+    "dist"
+  ],
+  "homepage": "https://github.com/KeystoneHQ/ur-registry#readme",
+  "license": "Apache-2.0",
+  "main": "dist/index.js",
+  "name": "@keystonehq/bc-ur-registry",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KeystoneHQ/ur-registry.git"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "build:purescript": "webpack --config webpack.config.js",
+    "build:watch": "tsc -w -p tsconfig.json",
+    "clean": "rimraf coverage build tmp dist",
+    "lint": "eslint . --ext .ts,.tsx",
+    "start": "node dist/index.js",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch"
+  },
+  "types": "src/index.ts",
+  "version": "0.5.0"
+}
